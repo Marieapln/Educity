@@ -3,8 +3,8 @@
   <% @teams.each do |team| %>
 
   <div class="card-teams">
-    <span><%= team.day_of_the_week%>s at <%= team.time_of_the_day%>:00</span>
-    <p><%= team.duration%></p>
+    <h3><%= team.day_of_the_week%>s at <%= team.time_of_the_day%>:00</h3>
+    <p><%= team.duration%>H meetings</p>
     <p><%= team.start_date%></p>
     <%  StudentsTeam.where(team_id: team.id).each do |st| %>
     <p><%= st.user.first_name %></p>
