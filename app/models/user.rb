@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :students_teams
   has_many :teams, through: :students_teams
   # has_many :courses, through: :teams
+  has_one_attached :avatar
 end
