@@ -1,0 +1,8 @@
+<ul>
+  <% @courses.each do |course| %>
+    <li>
+      <p><%= course.category %> - <%= course.title %> on <%= course.platform.capitalize %>, <%= course.course_length %> hours</p>
+      <p>See <%= link_to 'here', course.url %> for more details.</p>
+    </li>
+  <% end %>
+</ul>
