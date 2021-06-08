@@ -23,9 +23,11 @@ Course.create!(category:'Deep Learning',platform:'coursera',title:'Deep Learning
   puts "User created"
 end
 
+days = %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
+
 Course.all.each do |course|
   9.times do
-    Team.create!(course_id: course.id)
+    Team.create!(course_id: course.id, day_of_the_week: days.sample, time_of_the_day: rand(0..23), duration: rand(1..4) )
     puts "Creating team for #{course.title}"
   end
 end

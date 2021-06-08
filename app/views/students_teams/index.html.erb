@@ -1,6 +1,11 @@
-<div class="teams">
-  <div class="team">
-    <%=@teams.first.start_date%>
 
+<div class="teams">
+  <% @teams.each do |team| %>
+
+  <div class="team">
+    <p><%=  %></p>
   </div>
+
+  <% end %>
+
 </div>
