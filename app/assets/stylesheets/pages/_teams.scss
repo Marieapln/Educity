@@ -1,5 +1,18 @@
 .teams {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 72px;
+  margin:100px 300px 300px 300px;
+
+
 }
+
+.card-teams {
+  padding:15px;
+  overflow: hidden;
+  background: white;
+  height: 200px;
+  box-shadow:var(--box-shadow);
+  color: my-navy ;
+}
+

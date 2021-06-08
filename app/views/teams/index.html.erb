@@ -6,11 +6,9 @@
     <span><%= team.day_of_the_week%>s at <%= team.time_of_the_day%>:00</span>
     <p><%= team.duration%></p>
     <p><%= team.start_date%></p>
-    <% @students = StudentsTeam.where(team_id: team.id) %>
-      <% @students.each do |student| %>
-      <%= student.first_name %>
+    <%  StudentsTeam.where(team_id: team.id).each do |st| %>
+    <p><%= st.user.first_name %></p>
     <% end %>
-
   </div>
 
   <% end %>
