@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_161350) do
+ActiveRecord::Schema.define(version: 2021_06_07_165526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "courses", force: :cascade do |t|
+    t.string "category"
+    t.string "platform"
+    t.string "title"
+    t.string "url"
+    t.integer "course_length"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "students_teams", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.bigint "team_id"
+    t.index ["team_id"], name: "index_students_teams_on_team_id"
+    t.index ["user_id"], name: "index_students_teams_on_user_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.date "meeting_time"
+    t.date "start_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "course_id"
+    t.index ["course_id"], name: "index_teams_on_course_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +51,15 @@ ActiveRecord::Schema.define(version: 2021_06_07_161350) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "students_teams", "teams"
+  add_foreign_key "students_teams", "users"
+  add_foreign_key "teams", "courses"
 end
