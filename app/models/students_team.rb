@@ -1,4 +1,4 @@
 class StudentsTeam < ApplicationRecord
-  has_many :teams
-  has_many :users
+  belongs_to :team
+  belongs_to :user
 end
