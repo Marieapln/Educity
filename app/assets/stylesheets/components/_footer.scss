@@ -1,5 +1,5 @@
 .footer {
-  background: white;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,10 +28,10 @@ footer i {
 
 .footer-link {
   font-size: 25px;
-  color: purple;
+  color: $my-navy;
   text-decoration: none;
   &:hover {
-    color: purple;
+    color: $my-dark-lilac;
   }
 }
 
