@@ -1,0 +1,30 @@
+<div class="team-dashboard">
+
+<div class="team-description">
+
+  <div class="team-course">
+  <h1><%= @course.title %></h1>
+  <p>lngldkfnjsbkglsakmfbgjlm klnfknbksdlk njlndfkbjladnb njknkndfkjbn nknkjnk </p>
+  <div class="team-meeting">
+    <div>
+      <h3>blabla</h3>
+    </div>
+    <h3>bla</h3>
+  </div>
+  </div>
+
+
+  <div class="team-members">
+    <%  StudentsTeam.where(team_id: @team.id).each do |st| %>
+    <div class="member">
+    <%= st.user.first_name %>
+    </div>
+    <% end %>
+
+  </div>
+</div>
+
+<div class="sticky-notes">
+</div>
+
+</div>
