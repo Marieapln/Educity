@@ -6,11 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Course.create!(category:'Python',platform:'codecademy',title:'Analyse data with Python', url: 'https://www.codecademy.com/learn/paths/analyze-data-with-python', course_length: 60)
-Course.create!(category:'Java',platform:'codecademy',title:'Learn Java', url: 'https://www.codecademy.com/learn/learn-java', course_length: 25)
-Course.create!(category:'Statistics',platform:'datacamp',title:'Beginning Bayes in R', url: 'https://www.datacamp.com/community/open-courses/beginning-bayes-in-r', course_length: 30)
-Course.create!(category:'Machine Learning',platform:'coursera',title:'Machine Learning', url: 'https://www.coursera.org/learn/machine-learning', course_length: 25)
-Course.create!(category:'Deep Learning',platform:'coursera',title:'Deep Learning', url: 'https://www.coursera.org/specializations/deep-learning', course_length: 55)
+DatabaseCleaner.clean_with(:truncation)
+
+Course.create!(category:'Technology',subcategories:['Python','Data Analysis'],platform:'codecademy',title:'Analyse data with Python', url: 'https://www.codecademy.com/learn/paths/analyze-data-with-python', course_length: 60)
+Course.create!(category:'Technology',subcategories:['Java'],platform:'codecademy',title:'Learn Java', url: 'https://www.codecademy.com/learn/learn-java', course_length: 25)
+Course.create!(category:'Technology',subcategories:['Statistics','R'],platform:'datacamp',title:'Beginning Bayes in R', url: 'https://www.datacamp.com/community/open-courses/beginning-bayes-in-r', course_length: 30)
+Course.create!(category:'Technology',subcategories:['Machine Learning'],platform:'coursera',title:'Machine Learning', url: 'https://www.coursera.org/learn/machine-learning', course_length: 25)
+Course.create!(category:'Technology',subcategories:['Deep Learning','Tensorflow'],platform:'coursera',title:'Deep Learning', url: 'https://www.coursera.org/specializations/deep-learning', course_length: 55)
 
 
 40.times do
