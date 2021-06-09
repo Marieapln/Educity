@@ -1,7 +1,7 @@
 <h1>Welcome to Educity, the Learners' Community</h1>
 <p>What would you like to <strong>study <em>socially</em></strong>?</p>
 
-<%= simple_form_for :search, url: courses_path , method: 'GET' do |f| %>
-  <%= f.input :title, label: 'Search', input_html: { value: "", placeholder: "rails, codecademy, ..." } %>
+<%= simple_form_for :search, url: courses_path , method: 'GET', html: {class: 'form-inline'} do |f| %>
+  <%= f.input :title, label: '', input_html: { value: "", placeholder: "rails, codecademy, ..." } %>
   <%= f.submit "Search", class: "btn btn-primary" %>
 <% end %>
