@@ -1,0 +1,55 @@
+.team-dashboard {
+ display: flex;
+ height: 100vh;
+ overflow: hidden;
+ margin: 0 auto;
+ color:$my-navy;
+
+}
+
+.team-description {
+ padding: 40px;
+ width: 500px;
+ // margin-bottom:75px;
+ border-right: 1px solid black;
+ justify-content:space-between;
+ display: flex;
+ flex-direction: column;
+ flex-shrink: 0;
+ overflow: auto;
+}
+
+.team-meeting{
+  box-shadow:var(--box-shadow);
+
+  margin-top:25px;
+  padding:25px;
+  background-color: white;
+  height:125px;
+  justify-content:space-between;
+ display: flex;
+}
+
+.team-members {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-top: 25px;
+}
+
+.member {
+ position: relative;
+ padding: 18px;
+ // &:not(:last-child) {
+ //  margin-right: 25px;
+ // }
+}
+
+.sticky-notes {
+ width: 550px;
+ border-right: 1px solid black;
+ display: flex;
+ flex-direction: column;
+ flex-shrink: 0;
+ overflow: auto;
+}

@@ -1,0 +1,31 @@
+<div class="team-dashboard">
+
+<div class="team-description">
+
+  <div class="team-course">
+  <h1><%= @course.title %></h1>
+  <p>Data is everywhere. That means more companies are tracking, analyzing, and using the insights they find to make better decisions. In this Skill Path, you’ll learn the fundamentals of data analysis while building Python skills. </p>
+  <div class="team-meeting">
+    <div>
+      <p><%= @team.time_of_the_day%>:00 - <%= @team.time_of_the_day + @team.duration%>:00</p>
+      <h5>Upcoming Team Meeting</h5>
+    </div>
+    <h6>bla</h6>
+  </div>
+  </div>
+
+
+  <div class="team-members">
+    <%  StudentsTeam.where(team_id: @team.id).each do |st| %>
+    <div class="member">
+    <%= st.user.first_name %>
+    </div>
+    <% end %>
+
+  </div>
+</div>
+
+<div class="sticky-notes">
+</div>
+
+</div>

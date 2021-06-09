@@ -12,6 +12,7 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/teams";
+@import "pages/dashboard";
 @import "pages/courses";
 @import "components/buttons";
 @import "components/platform";
@@ -64,4 +65,5 @@ h1 {
 
 p {
   font-size: 18px;
+  margin:0;
 }

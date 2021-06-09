@@ -6,13 +6,12 @@
 }
 
 .post {
-  box-shadow:var(--box-shadow);
-  margin-bottom: 36px;
+  margin-bottom: 16px;
   border-radius:5px;
   display: flex;
   text-decoration: none;
   color: inherit;
-  width: 500px;
+  max-width: 500px;
   position: relative;
   padding: 1rem;
   background-color: white;
