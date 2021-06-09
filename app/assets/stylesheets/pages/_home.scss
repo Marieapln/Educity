@@ -1,1 +1,21 @@
-// Specific CSS for your home-page
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: rgba(1,1,1,0.2) !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  opacity:  1 !important;
+  color: rgba(1,1,1,0.2) !important;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  opacity:  1 !important;
+  color: rgba(1,1,1,0.2) !important;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgba(1,1,1,0.2) !important;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgba(1,1,1,0.2) !important;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+  color: rgba(1,1,1,0.2) !important;
+}
