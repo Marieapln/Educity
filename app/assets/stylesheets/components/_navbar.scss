@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: white;
   height: 50px;
   position: fixed;
   width: 100%;
@@ -16,7 +16,7 @@
 }
 
 #logo {
-  color: #E4DE5F;
+  color: $my-mustard;
   font-family: Rosario;
   font-weight: bold;
 }
