@@ -1,0 +1,7 @@
+<%= f.input :platform,
+              as: :radio_buttons,
+              collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'platform-wrapper',
+              item_wrapper_class: 'platform-item',
+              input_html: {class: 'platform-selector'},
+              collection: @platforms %>
