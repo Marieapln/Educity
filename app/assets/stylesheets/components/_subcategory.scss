@@ -1,0 +1,27 @@
+.subcategory-item {
+  display: inline-block;
+}
+
+.subcategory-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.subcategory-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: $my-lilac;
+  color: $my-dark-lilac;
+  border: 1px solid rgba($my-dark-lilac, 0.3);
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.subcategory-selector:checked + label {
+  background-color: $my-dark-lilac;
+  color: white;
+}
+
