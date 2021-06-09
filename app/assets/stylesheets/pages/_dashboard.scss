@@ -3,12 +3,13 @@
  height: 100vh;
  overflow: hidden;
  margin: 0 auto;
+ color:$my-navy;
 
 }
 
 .team-description {
  padding: 40px;
- width: 400px;
+ width: 500px;
  // margin-bottom:75px;
  border-right: 1px solid black;
  justify-content:space-between;
@@ -19,6 +20,10 @@
 }
 
 .team-meeting{
+  box-shadow:var(--box-shadow);
+
+  margin-top:25px;
+  padding:25px;
   background-color: white;
   height:125px;
   justify-content:space-between;
