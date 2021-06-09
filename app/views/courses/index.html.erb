@@ -7,8 +7,8 @@
 
       <li>
         <p class ="post-cat"><%= course.category %> </p>
-        <p class="post-text"><%= course.title %> on <%= course.platform.capitalize %></p>
-        <p class ="post-link">See <strong><%= link_to 'here', course.url, class: "weblink" %></strong> for more details.</p>
+        <h3 class="post-text"><%= course.title %> on <%= course.platform.capitalize %></h3>
+        <p class ="post-link">See <strong><%= link_to 'here', course.url, class: "weblink",  target: :_blank %></strong> for more details.</p>
 
       </li>
 

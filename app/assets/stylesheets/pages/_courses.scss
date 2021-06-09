@@ -6,12 +6,13 @@
 }
 
 .post {
-  margin-bottom: 16px;
+  box-shadow:var(--box-shadow);
+  margin-bottom: 36px;
   border-radius:5px;
   display: flex;
   text-decoration: none;
   color: inherit;
-  max-width: 500px;
+  width: 500px;
   position: relative;
   padding: 1rem;
   background-color: white;
@@ -51,7 +52,7 @@
 .post-text {
   position: relative;
   font-size: 24px;
-  font-weight: 560;
+  font-weight: 300;
   line-height: 1.333;
   transition: .4s ease-out;
 }

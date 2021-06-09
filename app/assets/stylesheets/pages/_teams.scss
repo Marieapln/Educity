@@ -15,6 +15,10 @@
   box-shadow:var(--box-shadow);
   color: #0E3959;
   border-radius: 5px;
-}
 
+  &:hover {
+    transform: scale(1.1);
+    transition-duration:0.3s;
+  }
+}
 
