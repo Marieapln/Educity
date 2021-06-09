@@ -1,49 +1,47 @@
 .footer {
-    background:my-neutral;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    width: 100%;
-    bottom: 0;
-  }
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+}
 
-  footer > p {
-    margin: 2rem;
-  }
+footer > p {
+  margin: 2rem;
+}
 
-  footer i {
-    vertical-align: middle;
-  }
+footer i {
+  vertical-align: middle;
+}
 
-  .footer-links {
-    display: flex;
-    align-items: center;
-  }
+.footer-links {
+  display: flex;
+  align-items: center;
+}
 
-  .footer-links a {
-    text-decoration: none;
-    font-size: 24px;
-    padding: 0px 10px;
-  }
+.footer-links a {
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
 
-  .footer-link {
-    font-size: 25px;
-    color:#E4DE5F;
-    text-decoration: none;
-    &:hover {
-      color:#F9F7CF;
-    }
+.footer-link {
+  font-size: 25px;
+  color: $my-navy;
+  text-decoration: none;
+  &:hover {
+    color: $my-dark-lilac;
   }
+}
 
-  .flex {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-  }
+.flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
 
-  .text-center {
-   text-align: center;
-  }
+.text-center {
+ text-align: center;
+}

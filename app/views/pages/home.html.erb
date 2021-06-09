@@ -3,12 +3,5 @@
 
 <%= simple_form_for :search, url: courses_path , method: 'GET' do |f| %>
   <%= f.input :title, label: 'Search', input_html: { value: "", placeholder: "rails, codecademy, ..." } %>
-  <%= f.input :category,
-              as: :radio_buttons,
-              collection_wrapper_tag: 'div',
-              collection_wrapper_class: 'category-wrapper',
-              item_wrapper_class: 'category-item',
-              input_html: {class: 'category-selector'},
-              collection: @categories %>
   <%= f.submit "Search", class: "btn btn-primary" %>
 <% end %>

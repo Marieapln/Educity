@@ -1,18 +1,22 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: my-neutral;
+  background-color: white;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand  {
-  font-size: 36px;
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
 }
 
 #logo {
-  color: #E4DE5F;
-  font-family: Rosario;
+  color: $my-mustard;
+  font-family: Rosario, sans-serif;
   font-weight: bold;
 }
