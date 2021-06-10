@@ -4,5 +4,6 @@ class StudentsTeamsController < ApplicationController
     students_team.save
   end
 
-  def index; end
+  def index
+   end
 end
