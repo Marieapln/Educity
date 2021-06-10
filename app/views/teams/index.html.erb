@@ -9,9 +9,9 @@
           <li class="list-inline-item list-inline-item-color-<%= (user.id % 4) + 1 %>"><%= user.first_name %></li>
         <% end %>
       </ul>
-      <%#= simple_form_for :students_team, url: students_team_join_path, method: 'post', html: {class: 'form-inline'} do |f| %>
-        <%#= f.button :submit %>
-      <%# end %>
+      <%= simple_form_for :students_team, url: students_team_join_path(team), method: 'post', html: {class: 'btn-join'} do |f| %>
+        <%= f.button :submit, class: 'btn btn-primary', value: 'Join' %>
+      <% end %>
     </div>
   <% end %>
 </div>
