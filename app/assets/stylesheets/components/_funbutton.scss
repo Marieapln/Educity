@@ -1,0 +1,80 @@
+
+
+.btn_wrap {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    width: 80px;
+    height: 35px;
+    border-radius: 50px;
+
+}
+
+
+ .btn_wrap:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1)
+}
+
+.btn_wrap span {
+    position: absolute;
+    z-index: 99;
+    width: 125px;
+    height: 72px;
+    border-radius: 80px;
+    text-align: center;
+    line-height: 70px;
+    letter-spacing: 2px;
+    background-color: $my-lilac;
+    padding: 0 18px;
+
+}
+
+.icon {
+  background-color:white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 240px;
+    height: 64px;
+    border-radius: 80px;
+
+}
+
+
+
+.btn_wrap:hover span {
+      -webkit-transition: all 1.2s ease;
+    transition: all 1.2s ease;
+    -webkit-transition-delay: .1s;
+    -webkit-transform: translateX(-280px);
+}
+
+.btn_wrap:hover i {
+    opacity: 1;
+    -webkit-transition-delay: .3s;
+    -webkit-transform: scale(1.2);
+}
+
+
+.btn_wrap i {
+    opacity: 0;
+    color: $my-navy;
+    -webkit-transform: scale(.1);
+    -webkit-transition: all .3s ease;
+}
+

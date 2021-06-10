@@ -9,8 +9,17 @@
     <div>
       <p><%= @team.time_of_the_day%>:00 - <%= @team.time_of_the_day + @team.duration%>:00</p>
       <h5>Upcoming Team Meeting</h5>
+      <p><%= @team.day_of_the_week %></p>
     </div>
-    <h6>bla</h6>
+
+     <div class="btn_wrap">
+        <span>Join</span>
+        <div class="icon">
+            <a href="https://zoom.us/join"  target=”_blank”> <i class="fas fa-video"></i>'</a>
+        </div>
+
+    </div>
+
   </div>
   </div>
 

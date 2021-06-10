@@ -20,14 +20,18 @@
 }
 
 .team-meeting{
-  box-shadow:var(--box-shadow);
+  // box-shadow:var(--box-shadow);
 
   margin-top:25px;
   padding:25px;
   background-color: white;
-  height:125px;
   justify-content:space-between;
  display: flex;
+   &:hover {
+    transform: scale(1.025);
+    transition-duration:0.3s;
+  }
+
 }
 
 .team-members {
