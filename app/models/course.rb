@@ -4,10 +4,10 @@ class Course < ApplicationRecord
   has_many :users, through: :students_teams
   has_many :questionnaires
 
-  validates :url, presence: true, uniqueness: true, length: { minimum: 15 }
-  validates :category, presence: true
-  validates :platform, presence: true
-  validates :title, presence: true
-  validates :course_length, presence: true
-  validates :subcategories, presence: true
+  # validates :url, presence: true, uniqueness: true, length: { minimum: 15 }
+  # validates :category, presence: true
+  # validates :platform, presence: true
+  # validates :title, presence: true
+  # validates :course_length, presence: true
+  # validates :subcategories, presence: true
 end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get '/courses/:course_id/teams/', to: 'teams#index'
+  get '/courses/:course_id/teams/', to: 'teams#index', as: 'teams_index'
   get '/courses', to: 'courses#index'
   get '/courses/:id/', to: 'courses#show', as: 'new_questionnaire'
   post 'courses/:course_id/questionnaires/', to: 'questionnaires#create', as: 'create_questionnaire'
