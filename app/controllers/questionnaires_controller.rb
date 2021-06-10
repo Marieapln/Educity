@@ -1,7 +1,5 @@
 class QuestionnairesController < ApplicationController
 
-
-
   def create
     @questionnaire = Questionnaire.new
     @questionnaire.user = current_user

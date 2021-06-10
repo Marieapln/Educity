@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'courses/:course_id/questionnaires/', to: 'questionnaires#create', as: 'create_questionnaire'
 
   get '/teams/:team_id/dashboard', to: 'teams#dashboard'
+  get '/students_teams/', to: 'students_teams#index'
   get '/teams/:id', to: 'teams#show'
   post '/teams/:teams_id/students_teams', to: 'students_teams#create', as: 'students_team_join'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

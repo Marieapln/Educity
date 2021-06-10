@@ -1,0 +1,26 @@
+.dashboard-container{
+  margin-top:50px;
+}
+.courses-list {
+  width: 480px;
+  margin-left:40px;
+}
+
+.course-card {
+  background-color: white;
+  padding:1rem;
+  margin-bottom: 16px;
+   &:hover {
+    transform: scale(1.1);
+    transition-duration:0.3s;
+  }
+}
+
+.top-course {
+  display:flex;
+  justify-content:space-between;
+}
+
+.course-card > .list-inline, .list-inline-item {
+  margin-bottom:0;
+}
