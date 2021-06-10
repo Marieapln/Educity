@@ -1,16 +1,17 @@
-
 <div class="teams">
   <% @teams.each do |team| %>
-
-  <div class="card-teams">
-    <p class="teams-meeting"><%= team.day_of_the_week%>s @ <%= team.time_of_the_day%>:00</p>
-    <p><%= team.duration%>H meetings</p>
-    <p><%= team.start_date%></p>
-    <%  StudentsTeam.where(team_id: team.id).each do |st| %>
-    <p><%= st.user.first_name %></p>
-    <% end %>
-  </div>
-
+    <div class="card-teams">
+      <p class="teams-meeting"><%= team.day_of_the_week%>s @ <%= team.time_of_the_day%>:00</p>
+      <p><%= team.duration%>H meetings</p>
+      <p><%= team.start_date%></p>
+      <ul class='list-inline'>
+        <% team.users.each do |user| %>
+          <li class="list-inline-item list-inline-item-color-<%= (user.id % 4) + 1 %>"><%= user.first_name %></li>
+        <% end %>
+      </ul>
+      <%= simple_form_for :students_team, url: students_team_join_path(team), method: 'post', html: {class: 'btn-join'} do |f| %>
+        <%= f.button :submit, class: 'btn btn-primary', value: 'Join' %>
+      <% end %>
+    </div>
   <% end %>
-
 </div>
