@@ -6,13 +6,13 @@
 
 
       <li>
+ <a href="/courses/#{}"
         <div class="post-top">
           <p class ="post-cat"><%= course.category %> </p>
           <%= link_to ('<i  class="fas fa-external-link-alt"></i>').html_safe, course.url, target: :_blank , style: 'color:#DBF1C5'%>
 
         </div>
         <h3 class="post-text"><%= course.title %> on <%= course.platform.capitalize %></h3>
-
       </li>
 
     </div>

@@ -1,0 +1,8 @@
+<div data-controller="quizz">
+<%= simple_form_for @questionnaire, url:  create_questionnaire_path(@course)  do |f| %>
+<%= f.input :duration %>
+<%= f.input :when %>
+
+  <%= f.submit %>
+<% end %>
+</div>

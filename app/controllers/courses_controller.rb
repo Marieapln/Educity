@@ -9,4 +9,9 @@ class CoursesController < ApplicationController
       @courses = Course.where("title ILIKE ?", "%#{@title}%")
     end
   end
+
+  def show
+    @questionnaire = Questionnaire.new
+    @course = Course.find(params[:id])
+  end
 end

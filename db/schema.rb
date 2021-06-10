@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_135239) do
+ActiveRecord::Schema.define(version: 2021_06_10_145910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 2021_06_09_135239) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "subcategories", default: [], array: true
+  end
+
+  create_table "questionnaires", force: :cascade do |t|
+    t.string "when"
+    t.string "duration"
+    t.bigint "user_id", null: false
+    t.bigint "course_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_questionnaires_on_course_id"
+    t.index ["user_id"], name: "index_questionnaires_on_user_id"
   end
 
   create_table "students_teams", force: :cascade do |t|
@@ -62,6 +73,8 @@ ActiveRecord::Schema.define(version: 2021_06_09_135239) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "questionnaires", "courses"
+  add_foreign_key "questionnaires", "users"
   add_foreign_key "students_teams", "teams"
   add_foreign_key "students_teams", "users"
   add_foreign_key "teams", "courses"
