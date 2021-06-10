@@ -1,0 +1,7 @@
+<div class="btn btn-primary">
+  <div class="icon">
+    <%= simple_form_for [:students_team, team], url: team_students_teams_path , method: 'POST', html: {class: 'form-inline'} do |f| %>
+      <%= f.submit "Join", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

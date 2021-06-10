@@ -3,11 +3,10 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 72px;
   margin:100px 300px 300px 300px;
-
-
 }
 
 .card-teams {
+  cursor: default;
   padding:15px;
   overflow: hidden;
   background: white;
@@ -15,10 +14,41 @@
   box-shadow:var(--box-shadow);
   color: #0E3959;
   border-radius: 5px;
-
   &:hover {
     transform: scale(1.1);
     transition-duration:0.3s;
   }
 }
 
+.list-inline-item {
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.list-inline-item-color-1 {
+  color: $rand-dark-1;
+  background-color: $rand-pastel-1;
+    border: 1px solid rgba($rand-dark-1, 0.3);
+}
+
+.list-inline-item-color-2 {
+  color: $rand-dark-2;
+  background-color: $rand-pastel-2;
+    border: 1px solid rgba($rand-dark-2, 0.3);
+}
+
+.list-inline-item-color-3 {
+  color: $rand-dark-3;
+  background-color: $rand-pastel-3;
+    border: 1px solid rgba($rand-dark-3, 0.3);
+}
+
+.list-inline-item-color-4 {
+  color: $rand-dark-4;
+  background-color: $rand-pastel-4;
+    border: 1px solid rgba($rand-dark-4, 0.3);
+}
