@@ -11,12 +11,12 @@
 <div class="quizz">
 
 <%= f.input :when,
-              as: :radio_buttons,
+              as: :check_boxes,
               collection_wrapper_tag: 'div',
               collection_wrapper_class: 'quizz-wrapper',
               item_wrapper_class: 'platform-item',
               input_html: {class: 'quizz-css'},
-              collection:["Mornings","Lunch Breaks","Afternoons","Weekends"]%>
+              collection: Questionnaire::WHEN %>
 
 </div>
 
@@ -26,7 +26,7 @@
         <div class="timeline_info">
           <div class="quizz">
                  <%= f.input :duration,
-              as: :check_boxes,
+              as: :radio_buttons,
               collection_wrapper_tag: 'div',
               collection_wrapper_class: 'quizz-wrapper',
               item_wrapper_class: 'platform-item',
@@ -38,15 +38,15 @@
         </div>
         <input class="timeline_input" id="btn3" name="timeline" type="radio" /><label class="timeline_label" for="btn3">Step 3</label>
         <div class="timeline_info">
+          <div class="quizz-dayz">
           <div class="quizz">
-          <div class="quizz">
-                 <%= f.input :duration,
+                 <%= f.input :days,
               as: :check_boxes,
               collection_wrapper_tag: 'div',
-              collection_wrapper_class: 'quizz-wrapper',
+              collection_wrapper_class: 'days-wrapper',
               item_wrapper_class: 'platform-item',
               input_html: {class: 'quizz-css'},
-              collection:["M","T","W","T","F","S","S"]%>
+              collection: Questionnaire::DAYS %>
 
           </div>
 <%= f.submit "Continue", class: "btn btn-primary" %>

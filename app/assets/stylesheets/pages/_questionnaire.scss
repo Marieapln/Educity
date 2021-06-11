@@ -14,7 +14,11 @@
     background-position: 0% 50%;
   }
 }
-
+.days-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 .quizz-wrapper{
  // display: flex;
   justify-content: space-between;
@@ -44,6 +48,9 @@
   }
 }
 
+.quizz-days {
+  top:-150px;
+}
 .quizz-css:checked + label {
   color: $my-dark-lilac !important;
   background-color:$my-lilac;
@@ -111,6 +118,7 @@
 .timeline_info {
   position: absolute;
   right: 0;
+  top:-60px;
   left: 0;
   text-align: center;
   font-size: 35px;

@@ -8,14 +8,16 @@ class QuestionnairesController < ApplicationController
     @questionnaire = Questionnaire.create(list_params)
     @course = Course.find(params[:course_id])
     @questionnaire.course = @course
-
     @questionnaire.user = current_user
+    @questionnaire.when.delete_at(0)
+    @questionnaire.days.delete_at(0)
+
     if @questionnaire.save
       redirect_to teams_index_path(@course)
   end
   end
 
     def list_params
-    params.require(:questionnaire).permit(:when, :duration)
+    params.require(:questionnaire).permit(:duration, when: [], days: [])
   end
 end

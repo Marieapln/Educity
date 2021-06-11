@@ -4,9 +4,14 @@
   justify-content: center;
   padding: 1rem;
 }
-
+.post > a {
+  color: $my-navy !important;
+  text-decoration:none;
+}
 
 .post {
+    color: my-navy !important;
+
   display: block;
   margin-bottom: 16px;
   border-radius:5px;

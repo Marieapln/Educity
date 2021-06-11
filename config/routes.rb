@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/courses/:id/', to: 'courses#show', as: 'new_questionnaire'
   post 'courses/:course_id/questionnaires/', to: 'questionnaires#create', as: 'create_questionnaire'
 
-  get '/teams/:team_id/dashboard', to: 'teams#dashboard'
+  get '/teams/:team_id/dashboard', to: 'teams#dashboard', as: 'dashboard'
   get '/students_teams/', to: 'students_teams#index'
   get '/teams/:id', to: 'teams#show'
   post '/teams/:teams_id/students_teams', to: 'students_teams#create', as: 'students_team_join'
