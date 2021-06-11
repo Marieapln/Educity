@@ -16,6 +16,12 @@
   }
 }
 
+.course-card > a {
+  color: $my-navy !important;
+    text-decoration:none;
+
+}
+
 .top-course {
   display:flex;
   justify-content:space-between;

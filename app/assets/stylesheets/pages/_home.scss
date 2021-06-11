@@ -1,3 +1,21 @@
+.home-body{
+  background: linear-gradient(180deg,  $my-blue, $light-gray, $my-yellow, $my-mustard);
+background-size: 400% 400%;
+  animation: sunrise 20s ease infinite;}
+
+
+  @keyframes sunrise {
+  0% {
+    background-position:  50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position:  50% 0%;
+  }
+}
+
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
   color: rgba(1,1,1,0.2) !important;
 }
@@ -21,7 +39,7 @@
 }
 
 .home {
-  margin: 75px;
+  padding: 75px;
 }
 
 .home > p {
@@ -43,5 +61,9 @@
 
 }
 
+.searchbox:focus {
+  // padding:5px;
 
+  background-color: solid white !important;
 
+}
