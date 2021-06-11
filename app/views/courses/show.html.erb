@@ -26,7 +26,7 @@
         <div class="timeline_info">
           <div class="quizz">
                  <%= f.input :duration,
-              as: :radio_buttons,
+              as: :check_boxes,
               collection_wrapper_tag: 'div',
               collection_wrapper_class: 'quizz-wrapper',
               item_wrapper_class: 'platform-item',
@@ -39,7 +39,16 @@
         <input class="timeline_input" id="btn3" name="timeline" type="radio" /><label class="timeline_label" for="btn3">Step 3</label>
         <div class="timeline_info">
           <div class="quizz">
+          <div class="quizz">
+                 <%= f.input :duration,
+              as: :check_boxes,
+              collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'quizz-wrapper',
+              item_wrapper_class: 'platform-item',
+              input_html: {class: 'quizz-css'},
+              collection:["M","T","W","T","F","S","S"]%>
 
+          </div>
 <%= f.submit "Continue", class: "btn btn-primary" %>
 </div>
         </div>
