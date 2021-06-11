@@ -7,9 +7,11 @@
 
 
 .post {
+  display: block;
   margin-bottom: 16px;
   border-radius:5px;
   display: flex;
+  flex-orientation:vertical;
   text-decoration: none;
   color: inherit;
   width: 500px;
@@ -73,6 +75,7 @@
 .post-cat {
 display: inline-block;
   background-color: #DBF1C5;
+  color: #0E3959;
   border-radius: 20px;
   padding: 6px 6px;
   font-weight: 300;

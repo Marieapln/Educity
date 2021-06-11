@@ -1,0 +1,21 @@
+<div class="dashboard-container">
+<div class="courses-list">
+  <h3>My Courses</h3>
+  <% @teams.each do |t| %>
+  <% team = t.team %>
+  <div class="course-card">
+    <div class="top-course">
+      <p class="teams-meeting"><%= team.day_of_the_week%>s @ <%= team.time_of_the_day%>:00</p>
+      <p class ="post-cat"><%= team.course.category %> </p>
+    </div>
+    <h3 class="post-text"><%= team.course.title %> on <%= team.course.platform.capitalize %></h3>
+      <ul class='list-inline'>
+        <% team.users.each do |user| %>
+          <li class="list-inline-item list-inline-item-color-<%= (user.id % 4) + 1 %>"><%= user.first_name %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+</div>
+</div>

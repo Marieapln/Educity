@@ -1,0 +1,54 @@
+
+<body class="questionnaire">
+<div class="timeline">
+  <div class="w-table">
+    <div class="w-table-cell">
+<%= simple_form_for @questionnaire, url:  create_questionnaire_path(@course)  do |f| %>
+
+      <div class="timeline_card">
+        <input checked="" class="timeline_input" id="btn1" name="timeline" type="radio" /><label class="timeline_label" for="btn1">Step 1</label>
+        <div class="timeline_info">
+<div class="quizz">
+
+<%= f.input :when,
+              as: :radio_buttons,
+              collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'quizz-wrapper',
+              item_wrapper_class: 'platform-item',
+              input_html: {class: 'quizz-css'},
+              collection:["Mornings","Lunch Breaks","Afternoons","Weekends"]%>
+
+</div>
+
+        </div>
+
+        <input class="timeline_input" id="btn2" name="timeline" type="radio" /><label class="timeline_label" for="btn2">Step 2</label>
+        <div class="timeline_info">
+          <div class="quizz">
+                 <%= f.input :duration,
+              as: :radio_buttons,
+              collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'quizz-wrapper',
+              item_wrapper_class: 'platform-item',
+              input_html: {class: 'quizz-css'},
+              collection:["< 1 hour","1-3 hours","4-9 hours","10+ hours"]%>
+
+          </div>
+
+        </div>
+        <input class="timeline_input" id="btn3" name="timeline" type="radio" /><label class="timeline_label" for="btn3">Step 3</label>
+        <div class="timeline_info">
+          <div class="quizz">
+
+<%= f.submit "Continue", class: "btn btn-primary" %>
+</div>
+        </div>
+        <div class="timeline_line"></div>
+      </div>
+    <% end %>
+
+    </div>
+  </div>
+</div>
+</body>
+

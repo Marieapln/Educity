@@ -19,3 +19,29 @@
 ::placeholder { /* Most modern browsers support this now. */
   color: rgba(1,1,1,0.2) !important;
 }
+
+.home {
+  margin: 75px;
+}
+
+.home > p {
+  margin-top:20px;
+  margin-bottom:20px;
+
+}
+
+.searchbox {
+  background-color:white;
+  border-color: white;
+}
+
+.search-bar {
+  // padding:5px;
+  background-color:white;
+  display:flex;
+  justify-content:space-between;
+
+}
+
+
+
