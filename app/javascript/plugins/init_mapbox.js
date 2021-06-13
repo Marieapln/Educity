@@ -12,11 +12,6 @@ const buildMap = (mapElement) => {
     });
   };
 
-  const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/pdunleav/cjofefl7u3j3e2sp0ylex3cyb' // <-- use your own!
-  });
-  
   const addMarkersToMap = (map, markers) => {
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window);
@@ -56,7 +51,6 @@ const buildMap = (mapElement) => {
   };
 
 
-    
   
 export { initMapbox };
 
