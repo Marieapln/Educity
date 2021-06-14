@@ -2,5 +2,13 @@ class Questionnaire < ApplicationRecord
   belongs_to :user
   belongs_to :course
   WHEN = ["Mornings","Lunch Breaks","Afternoons","Evenings","Nights"]
-  DAYS = ["M","T","W","T","F","S","S"]
+  DAYS = {
+    'Mon' => 'Monday',
+    'Tue' => 'Tuesday',
+    'Wed' => 'Wednesday',
+    'Thu' => 'Thursday',
+    'Fri' => 'Friday',
+    'Sat' => 'Saturday',
+    'Sun' => 'Sunday'
+  }
 end
