@@ -1,7 +1,27 @@
 
 <div class="courses-container">
-
-<ul>
+  <%= simple_form_for :course do |f| %>
+    <%= f.input :platform,
+                as: :radio_buttons,
+                collection_wrapper_tag: 'div',
+                collection_wrapper_class: 'platform-wrapper',
+                item_wrapper_class: 'platform-item',
+                input_html: {class: 'platform-selector'},
+                collection: @platforms %>
+    <%= f.input :category,
+                as: :radio_buttons,
+                collection_wrapper_tag: 'div',
+                collection_wrapper_class: 'category-wrapper',
+                item_wrapper_class: 'category-item',
+                input_html: {class: 'category-selector'},
+                collection: @categories %>
+    <%= f.input :subcategory,
+                as: :check_boxes,
+                input_html: { class: "subcategory-selector" },
+                item_wrapper_class: 'subcategory-item',
+                collection: @subcategories %>
+  <% end %>
+  <ul>
   <% @courses.each do |course| %>
 
       <span class="post">

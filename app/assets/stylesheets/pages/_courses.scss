@@ -21,14 +21,14 @@
   justify-content: center;
   overflow: hidden;
 }
+
 .post > a {
   color: $my-navy !important;
   text-decoration:none;
 }
 
 .post {
-    color: my-navy !important;
-
+  color: my-navy !important;
   display: block;
   margin-bottom: 16px;
   border-radius:5px;
@@ -55,20 +55,18 @@
     transform: scaleY(0);
     transition: .4s ease-out;
   }
-
-  .post-top{
-  width:468px;
+  .post-top {
+    width:468px;
     display: flex;
-  justify-content: space-between;
-  margin-bottom:10px;
-}
-
+    justify-content: space-between;
+    margin-bottom:10px;
+  }
   ul.aa {
     list-style-type: none;
   }
   &:hover {
     .post-text {
-      color: #0E3959;
+      color: $my-navy;
     }
     &:before {
       transform: scaleY(1);
@@ -94,24 +92,29 @@
   transition: .4s ease-out;
 }
 
-.post-cat {
-display: inline-block;
-  background-color: #DBF1C5;
-  color: #0E3959;
+.post-pop {
+  background-color: $my-yellow;
+  color: $my-dark-yellow;
   border-radius: 20px;
   padding: 6px 6px;
-  font-weight: 300;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.post-cat {
+  background-color: $my-green;
+  color: $my-navy;
+  border-radius: 20px;
+  padding: 6px 6px;
+  font-weight: 400;
   font-size: 10px;
 }
 
 .weblink {
-  color: #0E3959;
+  color: $my-navy;
 }
-
 
 .weblink:hover{
-  text-decoration:none;
-  color: #0E3959;
-
+  text-decoration: none;
+  color: $my-navy;
 }
-

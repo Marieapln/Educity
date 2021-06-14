@@ -4,7 +4,7 @@ class TeamsController < ApplicationController
 
   def index
     @course = Course.find(params[:course_id])
-    @teams = Team.where(course_id: @course.id, time_of_the_day: desired_start_time, duration: desired_duration)
+    @teams = Team.where(course_id: @course.id, time_of_the_day: desired_start_time, duration: desired_duration, day_of_the_week: desired_days)
     @team = Team.new
     @team.course = Course.find(params[:course_id])
   end
@@ -67,5 +67,9 @@ class TeamsController < ApplicationController
       times_to_include = (10..60).to_a
     end
     return times_to_include
+  end
+
+  def desired_days
+    return @questionnaire.days
   end
 end
