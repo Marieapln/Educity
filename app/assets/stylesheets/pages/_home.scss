@@ -1,9 +1,14 @@
+
 .home-body{
-  background: linear-gradient(180deg,  $my-blue, $light-gray, $my-yellow, $my-mustard);
+  background: linear-gradient(180deg,  #FFEDE3, #FFF5F0, $my-lilac);
 background-size: 400% 400%;
   animation: sunrise 20s ease infinite;}
 
-
+.home-welcome{
+  font-size: 50px;
+  font-weight: 600;
+  font-family: 'Roboto';
+}
   @keyframes sunrise {
   0% {
     background-position:  50% 0%;
@@ -15,6 +20,8 @@ background-size: 400% 400%;
     background-position:  50% 0%;
   }
 }
+
+
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
   color: rgba(1,1,1,0.2) !important;
