@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   post '/teams/:teams_id/students_teams', to: 'students_teams#create', as: 'students_team_join'
 
   get '/users/', to: 'users#index'
+  # get 'courses/:id/teams/new', to: 'teams#new', as: 'new_team'
+  post 'courses/:course_id/teams/', to: 'teams#create', as: 'create_team'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -2,7 +2,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 72px;
-  margin:100px 300px 300px 300px;
+  margin:100px 300px 100px 300px;
+}
+
+.teams-options {
+  margin: 0 300px 100px 300px;
+  padding:10px;
 }
 
 .card-teams {

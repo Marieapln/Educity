@@ -1,0 +1,16 @@
+.modal-content{
+  padding: 0 30px 30px 30px;
+}
+
+.close {
+  padding: 16px 0 !important;
+}
+
+.modal-header{
+  display:flex;
+  flex-direction:column;
+  color: $my-navy;
+}
+.modal-header {
+  justify-content:left;
+}
