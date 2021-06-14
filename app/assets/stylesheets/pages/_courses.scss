@@ -1,8 +1,25 @@
+
+
+.new-course-q{
+  color:$my-navy;
+  background-color: $my-yellow;
+  padding: 1rem;
+}
+
+.button {
+  margin-top:1rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+
+}
+
 .courses-container {
+  margin-top:50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  overflow: hidden;
 }
 .post > a {
   color: $my-navy !important;
