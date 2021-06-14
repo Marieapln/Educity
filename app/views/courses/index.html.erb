@@ -1,3 +1,4 @@
+
 <div class="courses-container">
   <%= simple_form_for :course do |f| %>
     <%= f.input :platform,
@@ -21,19 +22,53 @@
                 collection: @subcategories %>
   <% end %>
   <ul>
-    <% @courses.each do |course| %>
-        <span class="post">
-          <%= link_to new_questionnaire_path(course)do %>
-            <li>
-              <div class="post-top">
-                <p class ="post-cat"><%= course.category %> </p>
-                <!-- <%= link_to ('<i  class="fas fa-external-link-alt"></i>').html_safe, course.url, target: :_blank , style: 'color:#DBF1C5'%> -->
-                <p class="post-pop"><%= course.users.count %> learners</p>
-              </div>
-              <h3 class="post-text"><%= course.title %> on <%= course.platform.capitalize %></h3>
-            </li>
-          <% end %>
-        </span>
-    <% end %>
-  </ul>
+  <% @courses.each do |course| %>
+
+      <span class="post">
+            <%= link_to new_questionnaire_path(course)do %>
+
+      <li>
+
+        <div class="post-top">
+          <p class ="post-cat"><%= course.category %> </p>
+<!--           <%= link_to ('<i  class="fas fa-external-link-alt"></i>').html_safe, course.url, target: :_blank , style: 'color:#DBF1C5'%>
+ -->
+        </div>
+        <h4 class="post-text"><%= course.title %> on <%= course.platform.capitalize %></h4>
+      </li>
+        <% end %>
+
+    </span>
+  <% end %>
+  <li>
+    <div class="new-course-q">
+    <h3> Couldn't find the course you are looking for ? </h3>
+      <p>Add it to the list, we'll guide you, step by step.</p>
+         <div class="button"><button class="btn btn-primary" data-toggle="modal" data-target="#createcourseModal">
+           +</button></div>
+
+      </li>
+  </div>
+</ul>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="createcourseModal" tabindex="-1" role="dialog" aria-labelledby="createcourseModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title">Add a new course</h3>
+
+      </div>
+      <div class="modal-input">
+      <%= form_with url: create_course_path do |form| %>
+        <%= form.text_field :url %>
+        <%= form.submit "Add Course" %>
+      <% end %>
+
+
+    </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

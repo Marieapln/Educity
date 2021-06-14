@@ -16,3 +16,48 @@
     </div>
   <% end %>
 </div>
+
+<div class="teams-options">
+  <h3>Couldn't find a team with a suitable time slot ?</h3>
+  <h5>Why not create your own!</h5>
+
+  <button class="btn btn-primary" data-toggle="modal" data-target="#createteamModal">
+  Create
+</button>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="createteamModal" tabindex="-1" role="dialog" aria-labelledby="createteamModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title">Awesome 👏</h3>
+        <h3 class="modal-title">Let's create a new team.</h3>
+
+
+      </div>
+      <div class="modal-input">
+      <%= simple_form_for @team, url:  create_team_path(@course)  do |f| %>
+      <%= f.input :day_of_the_week,
+              as: :radio_buttons,
+              collection: Team::DAY_OF_THE_WEEK, value_method: :first, label_method: :second,
+              collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'days-wrapper',
+              item_wrapper_class: 'platform-item',
+              input_html: {class: 'quizz-css'}%>
+      <%= f.input :time_of_the_day, as: :time, default: Time.parse('8:00')  %>
+      <%= f.input :duration,
+              as: :numeric %>
+      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+
+
+
+      <% end %>
+    </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

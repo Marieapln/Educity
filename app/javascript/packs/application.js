@@ -39,3 +39,7 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 import "controllers"
+
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();

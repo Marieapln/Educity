@@ -16,6 +16,8 @@
 @import "pages/courses";
 @import "pages/questionnaire";
 @import "pages/user";
+@import "pages/teamform";
+
 
 @import "components/buttons";
 @import "components/platform";
@@ -25,6 +27,8 @@
 @import "components/subcategory";
 
 @import "components/map";
+@import "flatpickr/dist/flatpickr";
+
 
 :root{
 --box-shadow: 5px 10px 5px  rgba(100,100,100, 0.1);
@@ -74,4 +78,5 @@ p {
   font-size: 18px;
   margin:0;
 }
+
 

@@ -14,8 +14,10 @@ class QuestionnairesController < ApplicationController
 
     if @questionnaire.save
       redirect_to teams_index_path(@course)
+    end
   end
-  end
+
+  private
 
     def list_params
     params.require(:questionnaire).permit(:duration, when: [], days: [])

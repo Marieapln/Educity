@@ -1,0 +1,27 @@
+.modal-content {
+  border-radius:10px;
+}
+.modal-content{
+  padding: 0 30px 30px 30px;
+}
+
+.close {
+  padding: 16px 0 !important;
+}
+
+.modal-input{
+  padding-top: 20px;
+}
+
+.modal-header{
+  display:flex;
+  flex-direction:column;
+  color: $my-navy;
+}
+.modal-header {
+  justify-content:left;
+}
+
+#team_start_date{
+  background-color:white;
+}

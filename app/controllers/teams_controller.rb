@@ -5,6 +5,8 @@ class TeamsController < ApplicationController
   def index
     @course = Course.find(params[:course_id])
     @teams = Team.where(course_id: @course.id, time_of_the_day: desired_start_time, duration: desired_duration, day_of_the_week: desired_days)
+    @team = Team.new
+    @team.course = Course.find(params[:course_id])
   end
 
   def dashboard
@@ -12,9 +14,25 @@ class TeamsController < ApplicationController
     @course = @team.course
   end
 
-  def show; end
+
+  def create
+    @user = current_user
+    @team = Team.create(list_params)
+    @course = Course.find(params[:course_id])
+    @team.course = @course
+    @team.time_of_the_day = params[:team]["time_of_the_day(4i)"].to_i
+    if @team.save
+      StudentsTeam.new(team_id: @team.id, user_id: @user.id).save
+      redirect_to students_teams_path
+    end
+
+  end
 
   private
+
+  def list_params
+    params.require(:team).permit(:day_of_the_week, :start_date, :duration)
+  end
 
   def set_team
     @team = Team.find(params[:id])
