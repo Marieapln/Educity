@@ -31,54 +31,47 @@
         <% @user = current_user %>
 
     <% @courses.each do |course| %>
+
     <% if !@user.courses.include?(course) %>
-
-        <span class="post" id="<%= course.platform %>">
-          <%= link_to new_questionnaire_path(course) do %>
-            <li>
-              <div class="post-top"   >
-                <p class ="post-cat"><%= course.category %> </p>
-                <p class="post-pop"><%= course.users.count %> learners</p>
-              </div>
-              <h3 class="post-text"><%= course.title %></h3>
-              <p style="font-weight:600" class="post-platform"><%= course.platform.capitalize %></p>
-            </li>
-          <% end %>
-        </span>
-
-      <% else %>
-
-          <span class="post" id="<%= course.platform %>" style="color: #0E3959">
-            <li id="sweet-alert">
-              <div class="post-top" >
-                <p class ="post-cat"><%= course.category %> </p>
-                <p class="post-pop"><%= course.users.count %> learners</p>
-              </div>
-              <h3 class="post-text"><%= course.title %></h3>
-              <p style="font-weight:600" class="post-platform"><%= course.platform.capitalize %></p>
-
-            </li>
-        </span>
-
-      <% end %>
-    <% end %>
 
       <% subcatlist = [] %>
       <% course.subcategories.each do |subcat| %>
         <% subcatlist << "post-subcat-#{subcat.downcase.gsub(/\W/, '')}" %>
       <% end %>
       <% subcats = subcatlist.join(' ') %>
-      <span class="post post-category-<%= course.category.downcase.gsub(/\W/, '') %> <%= subcats %>">
+      <span class="post post-category-<%= course.category.downcase.gsub(/\W/, '') %> <%= subcats %>" id="<%= course.platform %>">
         <%= link_to new_questionnaire_path(course)do %>
           <li>
             <div class="post-top">
               <p class ="post-cat"><%= course.category %> </p>
               <p class="post-pop"><%= course.users.count %> learners</p>
             </div>
-            <h3 class="post-text"><%= course.title %> on <%= course.platform.capitalize %></h3>
+            <h3 class="post-text"><%= course.title %></h3>
+            <p style="font-weight:600" class="post-platform"><%= course.platform.capitalize %></p>
           </li>
         <% end %>
+
       </span>
+
+      <% else %>
+            <% subcatlist = [] %>
+      <% course.subcategories.each do |subcat| %>
+        <% subcatlist << "post-subcat-#{subcat.downcase.gsub(/\W/, '')}" %>
+      <% end %>
+      <% subcats = subcatlist.join(' ') %>
+      <span class="post post-category-<%= course.category.downcase.gsub(/\W/, '') %> <%= subcats %>" id="<%= course.platform %>" style="color: #0E3959" >
+          <li id="sweet-alert">
+            <div class="post-top">
+              <p class ="post-cat"><%= course.category %> </p>
+              <p class="post-pop"><%= course.users.count %> learners</p>
+            </div>
+            <h3 class="post-text"><%= course.title %> </h3>
+             <p style="font-weight:600" class="post-platform"><%= course.platform.capitalize %></p>
+          </li>
+      <% end %>
+      </span>
+          <% end %>
+
     <li>
       <div class="new-course-q">
         <h3> Couldn't find the course you are looking for ? </h3>
