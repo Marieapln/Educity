@@ -136,4 +136,26 @@
   color: $my-navy;
 }
 
+<<<<<<< HEAD
 
+=======
+.courses-filter-form form {
+  max-width: 75%;
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subcategory-hidden {
+  transform: scale(0);
+  position: absolute;
+  top: 0;
+}
+
+.category-hidden {
+  transform: scale(0);
+  position: absolute;
+  top: 0;
+}
+>>>>>>> 1bb53544d6e006f61a3ca90e06b3c731ea68e9ae
