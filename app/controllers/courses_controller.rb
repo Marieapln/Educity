@@ -20,7 +20,7 @@ class CoursesController < ApplicationController
     @url = params[:url]
     html_file = URI.open(@url).read
     html_doc = Nokogiri::HTML(html_file)
-        binding.pry
+        # binding.pry
 
     platform =  html_doc.search('meta[property="og:site_name"]')[0].attributes["content"].value
     if platform == "Codecademy"
@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
       category = html_doc.search('.breadcrumb-item').text.strip
       months = html_doc.search('._1tu07i3a')[4].children[0].children.children.text.match(/\d/)[0].to_i
       hours = html_doc.search('._1tu07i3a')[4].children[1].children.children.text.match(/\d/)[0].to_i
-      Course.new(title: title, url: @url, platform: platform, subcategories: subcategories, course_length: months*hours).save
+      Course.new(title: title, url: @url, platform: platform, subcategories: subcategories, course_length: months*hours, category:"Technology").save
 
     end
   end
