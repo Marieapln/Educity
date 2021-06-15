@@ -1,41 +1,50 @@
 <div class="courses-container">
-  <%= simple_form_for :course do |f| %>
-    <%= f.input :platform,
-                as: :radio_buttons,
-                collection_wrapper_tag: 'div',
-                collection_wrapper_class: 'platform-wrapper',
-                item_wrapper_class: 'platform-item',
-                input_html: {class: 'platform-selector'},
-                collection: @platforms %>
-    <%= f.input :category,
-                as: :radio_buttons,
-                collection_wrapper_tag: 'div',
-                collection_wrapper_class: 'category-wrapper',
-                item_wrapper_class: 'category-item',
-                input_html: {class: 'category-selector'},
-                collection: @categories %>
-    <% @subcategories.each do |subcat| %>
-      <%= f.input :subcategories,
-                  as: :check_boxes,
-                  label: '',
-                  input_html: { class: "subcategory-selector" },
-                  item_wrapper_class: "subcategory-item subcategory-hidden subcategory-item-#{subcat[0]}",
-                  collection: subcat[1] %>
+  <div class="courses-filter-form">
+    <%= simple_form_for :course do |f| %>
+      <%= f.input :platform,
+                  as: :radio_buttons,
+                  collection_wrapper_tag: 'div',
+                  collection_wrapper_class: 'platform-wrapper',
+                  item_wrapper_class: 'platform-item',
+                  input_html: {class: 'platform-selector'},
+                  collection: @platforms %>
+      <%= f.input :category,
+                  as: :radio_buttons,
+                  collection_wrapper_tag: 'div',
+                  collection_wrapper_class: 'category-wrapper',
+                  item_wrapper_class: "category-item",
+                  input_html: {class: 'category-selector'},
+                  collection: @categories %>
+      <div class="courses-subcategories-block">
+        <% @subcategories.each do |subcat| %>
+          <%= f.input :subcategories,
+                      as: :check_boxes,
+                      label: '',
+                      input_html: { class: "subcategory-selector" },
+                      item_wrapper_class: "subcategory-item category-hidden subcategory-item-#{subcat[0]}",
+                      collection: subcat[1] %>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
+  </div>
   <ul>
     <% @courses.each do |course| %>
-        <span class="post">
-          <%= link_to new_questionnaire_path(course)do %>
-            <li>
-              <div class="post-top">
-                <p class ="post-cat"><%= course.category %> </p>
-                <p class="post-pop"><%= course.users.count %> learners</p>
-              </div>
-              <h3 class="post-text"><%= course.title %> on <%= course.platform.capitalize %></h3>
-            </li>
-          <% end %>
-        </span>
+      <% subcatlist = [] %>
+      <% course.subcategories.each do |subcat| %>
+        <% subcatlist << "post-subcat-#{subcat.downcase.gsub(/\W/, '')}" %>
+      <% end %>
+      <% subcats = subcatlist.join(' ') %>
+      <span class="post post-category-<%= course.category.downcase.gsub(/\W/, '') %> <%= subcats %>">
+        <%= link_to new_questionnaire_path(course)do %>
+          <li>
+            <div class="post-top">
+              <p class ="post-cat"><%= course.category %> </p>
+              <p class="post-pop"><%= course.users.count %> learners</p>
+            </div>
+            <h3 class="post-text"><%= course.title %> on <%= course.platform.capitalize %></h3>
+          </li>
+        <% end %>
+      </span>
     <% end %>
     <li>
       <div class="new-course-q">

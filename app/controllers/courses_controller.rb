@@ -94,7 +94,7 @@ class CoursesController < ApplicationController
     end
     subcategories.each do |category|
       category[1].uniq.each do |subcat|
-        cat_to_add = category[0].downcase.split(' ').join
+        cat_to_add = category[0].downcase.gsub(/\W/, '')
         @subcategories[cat_to_add] = [] unless @subcategories[cat_to_add]
         @subcategories[cat_to_add] << subcat
       end
