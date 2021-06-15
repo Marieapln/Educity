@@ -4,15 +4,5 @@
 <h1 class="home-welcome">the Learners' Community</h1>
 <p>What would you like to <strong>study <em>socially</em></strong>?</p>
 
-<%= simple_form_for :search, url: courses_path , method: 'GET', html: {class: 'form-inline'} do |f| %>
-  <div class="search-bar">
-
-  <%= f.input :title, label: '', input_html: { value: "", placeholder: "rails, codecademy, ...", class: "searchbox" } %>
-
-  <%= button_tag type: 'submit', class: "btn btn-primary" do %>
-    Search
-  <% end %>
-</div>
-<% end %>
 </div>
 </body>
