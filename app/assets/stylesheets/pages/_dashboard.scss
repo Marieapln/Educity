@@ -34,20 +34,7 @@
 
 }
 
-.team-members {
- display: flex;
- justify-content: center;
- align-items: center;
- margin-top: 25px;
-}
 
-.member {
- position: relative;
- padding: 18px;
- // &:not(:last-child) {
- //  margin-right: 25px;
- // }
-}
 
 .sticky-notes {
  width: 550px;
