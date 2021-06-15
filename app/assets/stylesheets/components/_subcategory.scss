@@ -24,3 +24,8 @@
   background-color: $my-dark-lilac;
   color: white;
 }
+
+.subcategory-hidden {
+  transform: scale(0);
+  position: absolute;
+}
