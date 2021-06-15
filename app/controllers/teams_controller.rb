@@ -15,6 +15,7 @@ class TeamsController < ApplicationController
   end
 
 
+
   def create
     @user = current_user
     @team = Team.create(list_params)

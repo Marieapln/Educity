@@ -5,13 +5,14 @@
       <p class="teams-meeting"><%= team.day_of_the_week%>s @ <%= team.time_of_the_day%>:00</p>
       <p><%= team.duration%>H meetings</p>
       <p><%= team.start_date%></p>
-      <ul class='list-inline'>
+
+      <div id="team-participants">
         <% team.users.each do |user| %>
-          <li class="list-inline-item list-inline-item-color-<%= (user.id % 4) + 1 %>"><%= user.first_name %></li>
+          <span><%= cl_image_tag user.photo.key %></span>
         <% end %>
-      </ul>
+      </div>
       <%= simple_form_for :students_team, url: students_team_join_path(team), method: 'post', html: {class: 'btn-join'} do |f| %>
-        <%= f.button :submit, class: 'btn btn-primary', value: 'Join' %>
+        <%= f.button :submit, class: 'btn btn-primary', value: 'Join',width: 50, height: 50, crop: :fill %>
       <% end %>
     </div>
   <% end %>
@@ -52,7 +53,7 @@
       <%= f.input :duration,
               as: :numeric %>
       <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <div class="tm-btn"><%= f.submit "Submit", class: "btn btn-primary" %></div>
 
 
 

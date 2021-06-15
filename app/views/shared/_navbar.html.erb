@@ -17,7 +17,15 @@
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://cdn.dribbble.com/users/230875/screenshots/12138332/media/e7333ea2756909de0b68a1ac111b9011.jpg?compress=1&resize=1200x1200", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% @user = current_user %>
+          <% if @user.photo.attached? %>
+              <%= cl_image_tag @user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+              <%= image_tag "https://cdn.dribbble.com/users/230875/screenshots/12138332/media/e7333ea2756909de0b68a1ac111b9011.jpg?compress=1&resize=1200x1200",
+              class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+
+
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
