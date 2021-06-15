@@ -24,23 +24,45 @@
     <% end %>
   <% end %>
   <ul>
+        <% @user = current_user %>
+
     <% @courses.each do |course| %>
-        <span class="post">
-          <%= link_to new_questionnaire_path(course)do %>
+    <% if !@user.courses.include?(course) %>
+
+        <span class="post" id="<%= course.platform %>">
+          <%= link_to new_questionnaire_path(course) do %>
             <li>
-              <div class="post-top">
+              <div class="post-top"   >
                 <p class ="post-cat"><%= course.category %> </p>
                 <p class="post-pop"><%= course.users.count %> learners</p>
               </div>
-              <h3 class="post-text"><%= course.title %> on <%= course.platform.capitalize %></h3>
+              <h3 class="post-text"><%= course.title %></h3>
+              <p style="font-weight:600" class="post-platform"><%= course.platform.capitalize %></p>
             </li>
           <% end %>
         </span>
+
+      <% else %>
+
+          <span class="post" id="<%= course.platform %>" style="color: #0E3959">
+            <li id="sweet-alert">
+              <div class="post-top" >
+                <p class ="post-cat"><%= course.category %> </p>
+                <p class="post-pop"><%= course.users.count %> learners</p>
+              </div>
+              <h3 class="post-text"><%= course.title %></h3>
+              <p style="font-weight:600" class="post-platform"><%= course.platform.capitalize %></p>
+
+            </li>
+        </span>
+
+      <% end %>
+
     <% end %>
     <li>
       <div class="new-course-q">
         <h3> Couldn't find the course you are looking for ? </h3>
-        <p>Add it to the list, we'll guide you, step by step.</p>
+        <p>Add it to the list, we promise it's easy.</p>
         <div class="button">
           <button class="btn btn-primary" data-toggle="modal" data-target="#createcourseModal">+</button>
         </div>
@@ -54,7 +76,8 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h3 class="modal-title">Add a new course</h3>
+        <h3 class="modal-title">Told you 👀 </h3>
+        <p>To help broaden Educity's horizons, simply enter the link of the course.</p>
       </div>
       <div class="modal-input">
         <%= form_with url: create_course_path do |form| %>
