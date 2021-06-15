@@ -82,7 +82,7 @@
 .timeline_card {
   position: relative;
   width: 600px;
-  height: 500px;
+  height: 600px;
   background-color: #fff;
   margin: auto;
   padding: 20px;
@@ -168,10 +168,10 @@
   animation: part 1.6s infinite ease-in-out;
 }
 .timeline_input[type=radio]:checked + .timeline_label + .timeline_info {
-  -moz-transform: translateY(10%);
-  -ms-transform: translateY(10%);
-  -webkit-transform: translateY(10%);
-  transform: translateY(10%);
+  -moz-transform: translateY(15%);
+  -ms-transform: translateY(15%);
+  -webkit-transform: translateY(15%);
+  transform: translateY(15%);
   opacity: 1;
 }
 .timeline_input[type=radio]:checked:nth-of-type(1) + .timeline_label + .timeline_info + .timeline_input + .timeline_label + .timeline_info + .timeline_input + .timeline_label + .timeline_info + .timeline_line:before {
