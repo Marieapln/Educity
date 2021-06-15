@@ -16,11 +16,12 @@
   </div>
 
 
-  <div class="team-members">
+
+  <div id= "team-participants-lg">
     <%  StudentsTeam.where(team_id: @team.id).each do |st| %>
-    <div class="member">
-    <%= st.user.first_name %>
-    </div>
+
+          <span><%= cl_image_tag st.user.photo.key %></span>
+
     <% end %>
 
   </div>
