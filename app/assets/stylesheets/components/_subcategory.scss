@@ -18,6 +18,8 @@
   border: 1px solid rgba($my-dark-lilac, 0.3);
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
+  min-width: 100%;
+  text-align: center;
 }
 
 .subcategory-selector:checked + label {
@@ -25,7 +27,22 @@
   color: white;
 }
 
-.subcategory-hidden {
-  transform: scale(0);
+.courses-subcategories-block {
+  position: relative;
+  display: flex;
+  height: 250px;
+  width: 100%;
+  background-color: white;
+  align-items: center;
+  align-content: space-around;
+  justify-content: center;
+}
+
+.course_subcategories {
   position: absolute;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-evenly;
 }
