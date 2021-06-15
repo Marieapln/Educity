@@ -44,3 +44,11 @@ import "controllers"
 import { initFlatpickr } from "../plugins/flatpickr";
 
 initFlatpickr();
+
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert', {
+  title: "Note",
+  text: "You have already joined a team for this course",
+  icon: "info"
+});
