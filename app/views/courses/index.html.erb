@@ -14,11 +14,14 @@
                 item_wrapper_class: 'category-item',
                 input_html: {class: 'category-selector'},
                 collection: @categories %>
-    <%= f.input :subcategory,
-                as: :check_boxes,
-                input_html: { class: "subcategory-selector" },
-                item_wrapper_class: 'subcategory-item',
-                collection: @subcategories %>
+    <% @subcategories.each do |subcat| %>
+      <%= f.input :subcategories,
+                  as: :check_boxes,
+                  label: '',
+                  input_html: { class: "subcategory-selector" },
+                  item_wrapper_class: "subcategory-item subcategory-hidden subcategory-item-#{subcat[0]}",
+                  collection: subcat[1] %>
+    <% end %>
   <% end %>
   <ul>
     <% @courses.each do |course| %>
