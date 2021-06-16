@@ -8,24 +8,30 @@
                   item_wrapper_class: 'platform-item',
                   input_html: {class: 'platform-selector'},
                   collection: @platforms %>
-      <%= f.input :category,
-                  as: :radio_buttons,
-                  collection_wrapper_tag: 'div',
-                  collection_wrapper_class: 'category-wrapper',
-                  item_wrapper_class: "category-item",
-                  input_html: {class: 'category-selector'},
-                  collection: @categories %>
+      <div class="courses-category-block">
+        <% @categories.each do |category| %>
+          <%= f.input :category,
+                      as: :radio_buttons,
+                      label: '',
+                      collection_wrapper_tag: 'div',
+                      collection_wrapper_class: 'category-wrapper',
+                      item_wrapper_class: "category-item platform-hidden category-item-#{category[0]}",
+                      input_html: {class: 'category-selector'},
+                      collection: category[1] %>
+        <% end %>
+      </div>
       <div class="courses-subcategories-block">
         <% @subcategories.each do |subcat| %>
           <%= f.input :subcategories,
                       as: :check_boxes,
                       label: '',
-                      input_html: { class: "subcategory-selector" },
+                      input_html: { class: "subcategory-selector", checked: true },
                       item_wrapper_class: "subcategory-item category-hidden subcategory-item-#{subcat[0]}",
                       collection: subcat[1] %>
         <% end %>
       </div>
     <% end %>
+    <button class='reset-filters reset-hidden'>Reset subcategory filters</button>
   </div>
   <ul>
     <% @courses.each do |course| %>
@@ -34,7 +40,7 @@
         <% subcatlist << "post-subcat-#{subcat.downcase.gsub(/\W/, '')}" %>
       <% end %>
       <% subcats = subcatlist.join(' ') %>
-      <span class="post post-category-<%= course.category.downcase.gsub(/\W/, '') %> <%= subcats %>">
+      <span class="post post-category-<%= course.category.downcase.gsub(/\W/, '') %> post-platform-<%= course.platform.downcase.gsub(/\W/, '') %> <%= subcats %>">
         <%= link_to new_questionnaire_path(course)do %>
           <li>
             <div class="post-top">

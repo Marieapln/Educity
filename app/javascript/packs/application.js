@@ -25,22 +25,19 @@ require("jquery")
 
 // External imports
 import "bootstrap";
-
+import "controllers";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
+import { categorySelection } from '../controllers/courses_controller';
+import { initFlatpickr } from "../plugins/flatpickr";
 import 'mapbox-gl/dist/mapbox-gl.css';
-
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
+  categorySelection();
+  initFlatpickr();
 });
-
-import "controllers"
-
-import { initFlatpickr } from "../plugins/flatpickr";
-
-initFlatpickr();

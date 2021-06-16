@@ -137,3 +137,15 @@
   position: absolute;
   top: 0;
 }
+
+.platform-hidden {
+  transform: scale(0);
+  position: absolute;
+  top: 0;
+}
+
+.reset-hidden {
+  transform: scale(0);
+  position: absolute;
+  top: 0;
+}
