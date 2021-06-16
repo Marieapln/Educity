@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon navbar-lewagon-white">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
   <%= link_to  "Educity", root_path, class: "navbar-brand" , id: "logo"  %>
 
 
@@ -6,16 +6,16 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-<div class="box">
-<!--         <form name="search">
- -->          <%= simple_form_for :search, url: courses_path , method: 'GET', html: {class: 'form-inline'} do |f| %>
+   <div class="box">
+ <!--         <form name="search">
+   -->          <%= simple_form_for :search, url: courses_path , method: 'GET', html: {class: 'form-inline'} do |f| %>
 
   <%= f.input :title, label: '', input_html: { value: "", placeholder: "rails, java,...", class: "input" } %>
-<% end %>
+ <% end %>
 
            <!--  <input type="text" class="input" name="txt"
             onmouseout="document.search.txt.value = ''"> -->
-<!--         </form>
+  <!--         </form>
  -->            <i class="fas fa-search"></i>
     </div>
 
