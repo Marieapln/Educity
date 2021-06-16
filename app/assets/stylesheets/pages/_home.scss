@@ -1,7 +1,7 @@
 
 .home-body{
-  background: linear-gradient(180deg,  #FFEDE3, #FFF5F0, $my-lilac);
-background-size: 400% 400%;
+  background: linear-gradient(180deg,  #FFEDE3, #FFF5F0, $my-lilac, #FFF5F0,  #FFEDE3,);
+background-size: 1600% 1600%;
   animation: sunrise 20s ease infinite;}
 
 .home-welcome{
@@ -91,10 +91,10 @@ background-size: 400% 400%;
 .column-popular {
   flex: 50%;
   padding: 24px;
-  
+
 }
 
 .move-right {
   padding-left: 62px;
 }
- 
+
