@@ -78,7 +78,7 @@
 
 
       <div class="chat-message clearfix">
-           <%= form_with chat: create_message_path do |form| %>
+           <%= simple_form_for @chat, url:  create_message_path do |form| %>
           <%= form.text_field :message,  placeholder:"Type your message",html: {class: "textarea"} %>
           <%= form.submit "Send", html: {class: 'chat-button'}%>
         <% end %>

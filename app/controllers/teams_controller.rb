@@ -13,6 +13,7 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:team_id])
     @course = @team.course
     @messages = Chat.where(team_id: params[:team_id])
+    @chat = Chat.new
   end
 
 
