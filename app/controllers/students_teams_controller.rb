@@ -7,8 +7,19 @@ class StudentsTeamsController < ApplicationController
 
   def index
     @user = current_user
+    Meeting.all.each {|instance| instance.destroy}
+    @user.teams.each do |team|
+
+      for week in 0..3
+        start_date = team.start_date + (week * 7).days
+
+        Meeting.create!(user_id: @user.id, team_id: team.id, start_time: start_date,
+        end_time: (start_date.to_time + team.duration.hours).to_datetime,
+        name: team.course.title)
+
+      end
+   end
     @teams = StudentsTeam.where(user_id: @user.id)
-   Meeting.all.each {|instance| instance.destroy}
 
     @meetings = Meeting.where(user_id: @user.id)
   end
