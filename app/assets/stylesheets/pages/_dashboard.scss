@@ -1,6 +1,9 @@
+
+
 .team-dashboard {
+
  display: flex;
- height: 100vh;
+ // height: 100vh;
  overflow: hidden;
  margin: 0 auto;
  color:$my-navy;
@@ -19,6 +22,10 @@
  overflow: auto;
 }
 
+#team-participants-lg {
+  bottom-margin:50px;
+}
+
 .team-meeting{
   box-shadow:var(--box-shadow);
 
@@ -33,7 +40,6 @@
   }
 
 }
-
 
 
 .sticky-notes {
