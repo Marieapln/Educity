@@ -1,7 +1,7 @@
 <div class="team-dashboard">
 
 <div class="team-description">
-
+<% @user = current_user %>
   <div class="team-course">
   <h1><%= @course.title %></h1>
   <p>Data is everywhere. That means more companies are tracking, analyzing, and using the insights they find to make better decisions. In this Skill Path, you’ll learn the fundamentals of data analysis while building Python skills. </p>
@@ -30,6 +30,71 @@
 <div class="sticky-notes">
 </div>
 
+<div class="chat">
+
+
+
+
+    <div class="chat">
+      <div class="chat-header clearfix">
+        <div class="chat-about">
+          <div class="chat-with"><h3>Chat</h3></div>
+        </div>
+      </div> <!-- end chat-header -->
+     <div class="chat-history">
+        <ul>
+<% @messages.each do |message|%>
+  <% if message.user != @user %>
+            <li>
+            <div class="message-data">
+              <span class="message-data-name"><i class="fa fa-circle other"></i> <%= message.user.first_name%> </span>
+              <span class="message-data-time"><%= message.created_at.strftime(" %a %I:%M")  %> </span>
+            </div>
+            <div class="message my-message">
+              <%= message.message %>
+            </div>
+          </li>
+
+  <% else %>
+
+          <li class="clearfix">
+            <div class="message-data align-right">
+              <span class="message-data-time" ><%= message.created_at.strftime(" %a %I:%M") %> </span> &nbsp; &nbsp;
+              <span class="message-data-name" ><%= message.user.first_name%></span> <i class="fa fa-circle me"></i>
+
+            </div>
+            <div class="message other-message float-right">
+               <%= message.message %>
+            </div>
+          </li>
+  <% end %>
+<% end %>
+
+
+
+        </ul>
+
+      </div> <!-- end chat-history -->
+
+
+      <div class="chat-message clearfix">
+           <%= form_with chat: create_message_path do |form| %>
+          <%= form.text_field :message,  placeholder:"Type your message",html: {class: "textarea"} %>
+          <%= form.submit "Send", html: {class: 'chat-button'}%>
+        <% end %>
+
+        <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
+        <i class="fa fa-file-image-o"></i>
+
+
+      </div> <!-- end chat-message -->
+
+    </div> <!-- end chat -->
+
+  </div> <!-- end container -->
+
+
 </div>
+
 
 

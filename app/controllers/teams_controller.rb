@@ -12,6 +12,7 @@ class TeamsController < ApplicationController
   def dashboard
     @team = Team.find(params[:team_id])
     @course = @team.course
+    @messages = Chat.where(team_id: params[:team_id])
   end
 
 
@@ -28,6 +29,7 @@ class TeamsController < ApplicationController
     end
 
   end
+
 
   private
 
