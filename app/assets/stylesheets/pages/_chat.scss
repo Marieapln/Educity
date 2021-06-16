@@ -2,6 +2,8 @@
 ul {    list-style-type: none;
 }
 .chat {
+  height:100vh;
+
   margin-top:30px;
   margin-right:40px;
   width: 100%;
@@ -11,6 +13,7 @@ ul {    list-style-type: none;
   color: #434651;
 
   .chat-header {
+    height:10vh;
     padding: 10px;
     border-bottom: 4px solid $light-gray;
     border-top-left-radius: 10px;
@@ -43,6 +46,8 @@ text-align: center;
      background-color:white;
 }
   .chat-history {
+    height: 70vh;
+      overflow: scroll;
 
     padding: 30px 30px 20px;
     border-bottom: 3px solid $light-gray;
@@ -58,6 +63,7 @@ text-align: center;
     }
 
     .message {
+      height:20vh;
       color: white;
       padding: 15px 20px;
       line-height: 26px;
