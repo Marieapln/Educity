@@ -1,4 +1,4 @@
-.new-course-q{
+.new-course-q {
   color:$my-navy;
   background-color: $my-yellow;
   padding: 1rem;
@@ -9,7 +9,6 @@
   justify-content: center;
   display: flex;
   align-items: center;
-
 }
 
 .courses-container {
@@ -25,6 +24,7 @@
   color: $my-navy !important;
   text-decoration:none;
 }
+
 #Coursera {
   border-left: 4px solid $coursera;
 }
@@ -98,7 +98,6 @@
   transition: .4s ease-out;
 }
 
-
 .post-text {
   position: relative;
   font-size: 24px;
@@ -140,7 +139,6 @@
   color: $my-navy;
 }
 
-
 .courses-filter-form form {
   max-width: 75%;
   width: 75vw;
@@ -171,7 +169,8 @@
   transform: scale(0);
   position: absolute;
   top: 0;
-  
+}
+
 #url {
   border: 2px solid white !important;
   border-bottom: 3px solid $my-green !important;
@@ -181,10 +180,9 @@
 #addcourse {
     width:100%;
     margin: 20px 0;
-
 }
 
-#createcourse{
+#createcourse {
     margin-left:0;
     margin-right:0;
     height:auto;
