@@ -79,8 +79,14 @@ class CoursesController < ApplicationController
   end
 
   def set_categories
-    @categories = []
-    @courses.uniq(&:category).each { |course| @categories << course.category }.sort
+    @categories = {}
+    @courses.each do |course|
+      plat_to_add = course.platform.downcase.gsub(/\W/, '')
+      @categories[plat_to_add] = [] unless @categories[plat_to_add]
+      unless @categories[plat_to_add].include?(course.category)
+        @categories[plat_to_add] << course.category
+      end
+    end
   end
 
   def set_subcategories
