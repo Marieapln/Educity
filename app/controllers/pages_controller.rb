@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   def index
 
   current_user.teams.each do |team|
+
     for week in 0..3
       start_date = team.start_date + (week * 7).days
       Meeting.create!(user_id: user.id, team_id: team.id, start_time: start_date,
@@ -25,4 +26,7 @@ class PagesController < ApplicationController
   # Or, for a weekly view:
     @meetings = Meeting.where(starts_at: start_date.beginning_of_week..start_date.end_of_week)
 end
+
+
+
 end

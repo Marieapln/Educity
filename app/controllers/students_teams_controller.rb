@@ -8,6 +8,7 @@ class StudentsTeamsController < ApplicationController
   def index
     @user = current_user
     @teams = StudentsTeam.where(user_id: @user.id)
+   Meeting.all.each {|instance| instance.destroy}
 
     @meetings = Meeting.where(user_id: @user.id)
   end
