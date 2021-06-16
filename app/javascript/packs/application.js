@@ -47,7 +47,7 @@ initFlatpickr();
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
-initSweetalert('#sweet-alert', {
+initSweetalert('.sweet-alert', {
   title: "Note",
   text: "You have already joined a team for this course",
   icon: "info"
