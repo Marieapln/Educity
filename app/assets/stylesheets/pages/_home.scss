@@ -77,11 +77,11 @@ background-size: 400% 400%;
 
 .row-home {
   display: flex;
+  align-items: center;
 }
 
 .column-home {
-  flex: 33.33%;
-  padding: 5px;
+  width: 400px;
 }
 
 .row-popular {
@@ -90,5 +90,11 @@ background-size: 400% 400%;
 
 .column-popular {
   flex: 50%;
-  padding: 5px;
+  padding: 24px;
+  
 }
+
+.move-right {
+  padding-left: 62px;
+}
+ 
