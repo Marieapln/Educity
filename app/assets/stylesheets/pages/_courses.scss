@@ -1,3 +1,4 @@
+
 .new-course-q {
   color:$my-navy;
   background-color: $my-yellow;
@@ -12,12 +13,13 @@
 }
 
 .courses-container {
+  padding: 40px;
   margin-top:50px;
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
   overflow: hidden;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .post > a {
@@ -140,8 +142,6 @@
 }
 
 .courses-filter-form form {
-  max-width: 75%;
-  width: 75vw;
   display: flex;
   flex-direction: column;
   align-items: center;
