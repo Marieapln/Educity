@@ -48,7 +48,13 @@
             <li>
             <div class="message-data">
               <span class="message-data-name"><i class="fa fa-circle other"></i> <%= message.user.first_name%> </span>
-              <span class="message-data-time"><%= message.created_at.strftime(" %a %I:%M")  %> </span>
+              <span class="message-data-time">
+                     <% if message.created_at.today? %>
+                <%= message.created_at.strftime(" Today %I:%M") %>
+                <% else %>
+                <%= message.created_at.strftime(" %a %I:%M") %>
+                <% end %>
+              </span>
             </div>
             <div class="message my-message">
               <%= message.message %>
@@ -59,7 +65,13 @@
 
           <li class="clearfix">
             <div class="message-data align-right">
-              <span class="message-data-time" ><%= message.created_at.strftime(" %a %I:%M") %> </span> &nbsp; &nbsp;
+              <span class="message-data-time" >
+                <% if message.created_at.today? %>
+                <%= message.created_at.strftime(" Today %I:%M") %>
+                <% else %>
+                <%= message.created_at.strftime(" %a %I:%M") %>
+                <% end %>
+              </span> &nbsp; &nbsp;
               <span class="message-data-name" ><%= message.user.first_name%></span> <i class="fa fa-circle me"></i>
 
             </div>

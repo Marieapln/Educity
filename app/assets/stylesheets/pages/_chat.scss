@@ -4,7 +4,6 @@ ul {    list-style-type: none;
 .chat {
   height:100vh;
 
-  margin-top:30px;
   margin-right:40px;
   width: 100%;
   float:left;
@@ -63,7 +62,6 @@ text-align: center;
     }
 
     .message {
-      height:20vh;
       color: white;
       padding: 15px 20px;
       line-height: 26px;
@@ -89,6 +87,8 @@ text-align: center;
   }
 
   .chat-message {
+          height:20vh;
+
     padding: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
