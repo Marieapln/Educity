@@ -1,3 +1,10 @@
+#createteam{
+  color: darken($my-green, 10%);
+  &:hover{
+    color:darken($my-green, 20%);
+    cursor:pointer;
+  }
+}
 .teams {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

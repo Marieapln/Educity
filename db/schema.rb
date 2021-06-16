@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_15_191412) do
+ActiveRecord::Schema.define(version: 2021_06_16_194504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,18 @@ ActiveRecord::Schema.define(version: 2021_06_15_191412) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "subcategories", default: [], array: true
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "team_id"
+    t.index ["team_id"], name: "index_meetings_on_team_id"
+    t.index ["user_id"], name: "index_meetings_on_user_id"
   end
 
   create_table "questionnaires", force: :cascade do |t|
@@ -111,6 +123,7 @@ ActiveRecord::Schema.define(version: 2021_06_15_191412) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "chats", "teams"
   add_foreign_key "chats", "users"
+  add_foreign_key "meetings", "users"
   add_foreign_key "questionnaires", "courses"
   add_foreign_key "questionnaires", "users"
   add_foreign_key "students_teams", "teams"

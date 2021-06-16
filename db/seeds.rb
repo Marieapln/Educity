@@ -1,8 +1,12 @@
 require 'uri'
+require 'date'
+
 
 DatabaseCleaner.clean_with(:truncation)
 
 days = %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
+m = Date.new(2021,6,14)
+start = [m, m+1, m+2, m+3, m+4, m+5, m+6]
 
 cities = %w(London)
 
@@ -312,12 +316,33 @@ url: "https://www.coursera.org/specializations/modern-contemporary-art-design",
 course_length: 21,
   subcategories: ["Courses", "Photography", "Design", "Art", "History", "Museums", "Creativity", "Art History", "Art Direction"])
 
+# Course.all.each do |course|
+#   3.times do
+#     day = days.sample
+#     start_date = start[days.index(day)]
+#     Team.create!(course_id: course.id, day_of_the_week: day, start_date: start_date, time_of_the_day: rand(0..20), duration: rand(1..4))
+#   end
+#       puts "Created teams for #{course.title}"
+
+# end
+
+n = User.all.count
+users = Array(1..n)
+
+Team.all.each do |team|
+  rand(2..3).times do
+    StudentsTeam.create!(team_id: team.id, user_id: rand(1..n))
+  end
+end
+
 city_teams_count = 0
 cities.count.times do
   Course.all.each do |course|
     rand(1..2).times do
       puts "Creating team for #{course.title} in #{cities[city_teams_count]}"
-      Team.create!(course_id: course.id, day_of_the_week: days.sample, time_of_the_day: rand(0..23), duration: rand(1..4), city: cities[city_teams_count])
+      day = days.sample
+      start_date = start[days.index(day)]
+      Team.create!(course_id: course.id, day_of_the_week: day, start_date: start_date, time_of_the_day: rand(0..23), duration: rand(1..4), city: cities[city_teams_count])
       puts "Team created"
     end
   end
@@ -339,3 +364,15 @@ Team.all.each do |team|
   end
   puts "Added #{users_to_add_count}"
 end
+
+
+User.find(1).teams.each do |team|
+  for week in 0..3 do
+    start_date = team.start_date + (week * 7).days
+    Meeting.create!(user_id: 6, team_id: team.id, start_time: start_date,
+    end_time: (start_date.to_time + team.duration.hours).to_datetime,
+    name: team.course.title)
+  end
+end
+
+

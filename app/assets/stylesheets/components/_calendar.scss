@@ -1,0 +1,47 @@
+.simple-calendar {
+  margin-left: 150px;
+  table {
+    min-height: 80vh;
+    border-color: white !important;
+    background-color:white !important;
+  }
+
+  td {
+    width:100px !important;
+    border-color: white !important;
+    text-align:center
+  }
+  th {
+    border-color: white !important;
+
+  }
+
+  .today {
+    background-color: $my-mustard !important;
+  }
+}
+
+.meeting {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $my-navy;
+  transition: background 0.3s ease;
+}
+
+.meeting:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.simple-calendar .prev-month {
+    background: $my-blue !important;
+}
+
+.simple-calendar .day {
+    background: white;
+}
+
+.simple-calendar .next-month {
+    background: $my-blue !important;
+}
