@@ -161,6 +161,17 @@
   top: 0;
 }
 
+.platform-hidden {
+  transform: scale(0);
+  position: absolute;
+  top: 0;
+}
+
+.reset-hidden {
+  transform: scale(0);
+  position: absolute;
+  top: 0;
+  
 #url {
   border: 2px solid white !important;
   border-bottom: 3px solid $my-green !important;
@@ -178,5 +189,4 @@
     margin-right:0;
     height:auto;
     width:auto;
-
 }
