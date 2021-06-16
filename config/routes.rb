@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get '/users/', to: 'users#index'
   post 'courses/:course_id/teams/', to: 'teams#create', as: 'create_team'
   post 'courses', to: 'courses#create', as: 'create_course'
+  post '/teams/:team_id/dashboard/chats', to: 'chats#create', as: 'create_message'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

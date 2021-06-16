@@ -110,7 +110,7 @@
   top: 18px;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
+  border-radius: 20%;
   background-color: #eee;
   border: 3px $my-green solid;
 }
@@ -163,6 +163,7 @@
 }
 .timeline_input[type=radio]:checked + .timeline_label:before {
   background-color: $my-green;
+  border-color: $my-green;
   -moz-animation: part 1.6s infinite ease-in-out;
   -webkit-animation: part 1.6s infinite ease-in-out;
   animation: part 1.6s infinite ease-in-out;

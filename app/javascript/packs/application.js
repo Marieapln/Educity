@@ -32,6 +32,7 @@ import "controllers";
 import { initMapbox } from '../plugins/init_mapbox';
 import { categorySelection } from '../controllers/courses_controller';
 import { initFlatpickr } from "../plugins/flatpickr";
+import { initSweetalert } from '../plugins/init_sweetalert';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 document.addEventListener('turbolinks:load', () => {
@@ -40,4 +41,10 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   categorySelection();
   initFlatpickr();
+  initSweetalert('#sweet-alert', {
+    title: "Note",
+    text: "You have already joined a team for this course",
+    icon: "info"
+  });
 });
+
