@@ -34,22 +34,19 @@
     <button class='reset-filters reset-hidden'>Reset subcategory filters</button>
   </div>
   <ul>
-        <% @user = current_user %>
-
+    <% @user = current_user %>
     <% @courses.each do |course| %>
-
-    <% if !@user.courses.include?(course) %>
-
+      <% @user.courses.include?(course) ? span_sa = " id=sweet-alert" : span_sa = "" %>
+      <% @user.courses.include?(course) ? st_sa = " sweet-alert-color" : st_sa =  "" %>
+      <%# <% binding.pry %>
       <% subcatlist = [] %>
       <% course.subcategories.each do |subcat| %>
         <% subcatlist << "post-subcat-#{subcat.downcase.gsub(/\W/, '')}" %>
       <% end %>
       <% subcats = subcatlist.join(' ') %>
-
-      <span class="post post-category-<%= course.category.downcase.gsub(/\W/, '') %> post-platform-<%= course.platform.downcase.gsub(/\W/, '') %> <%= subcats %>" id="<%= course.platform %>">
-
+      <span class="post post-category-<%= course.category.downcase.gsub(/\W/, '') %> post-platform-<%= course.platform.downcase.gsub(/\W/, '') %> <%= subcats %><%= st_sa %>" id="<%= course.platform %>" >
         <%= link_to new_questionnaire_path(course)do %>
-          <li>
+          <li<%= span_sa %>>
             <div class="post-top">
               <p class ="post-cat"><%= course.category %> </p>
               <p class="post-pop"><%= course.users.count %> learners</p>
@@ -58,28 +55,8 @@
             <p style="font-weight:600" class="post-platform"><%= course.platform.capitalize %></p>
           </li>
         <% end %>
-
       </span>
-
-      <% else %>
-            <% subcatlist = [] %>
-      <% course.subcategories.each do |subcat| %>
-        <% subcatlist << "post-subcat-#{subcat.downcase.gsub(/\W/, '')}" %>
-      <% end %>
-      <% subcats = subcatlist.join(' ') %>
-      <span class="post post-category-<%= course.category.downcase.gsub(/\W/, '') %> <%= subcats %>" id="<%= course.platform %>" style="color: #0E3959" >
-          <li class="sweet-alert">
-            <div class="post-top">
-              <p class ="post-cat"><%= course.category %> </p>
-              <p class="post-pop"><%= course.users.count %> learners</p>
-            </div>
-            <h3 class="post-text"><%= course.title %> </h3>
-             <p style="font-weight:600" class="post-platform"><%= course.platform.capitalize %></p>
-          </li>
-      <% end %>
-      </span>
-          <% end %>
-
+    <% end %>
     <li>
       <div class="new-course-q">
         <h3> Couldn't find the course you are looking for ? </h3>

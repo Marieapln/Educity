@@ -1,26 +1,26 @@
 <div class="dashboard-container">
-<div class="courses-list">
-  <h3>My Courses</h3>
-  <% @teams.each do |t| %>
-  <% team = t.team %>
-
-  <div class="course-card">
-                  <%= link_to dashboard_path(team) , :action => 'go' do %>
-
-    <div class="top-course">
-      <p class="teams-meeting"><%= team.day_of_the_week%>s @ <%= team.time_of_the_day%>:00</p>
-      <p class ="post-cat"><%= team.course.category %> </p>
-    </div>
-    <h3 class="post-text"><%= team.course.title %> on <%= team.course.platform.capitalize %></h3>
-            <div id="team-participants">
-        <% team.users.each do |user| %>
-          <span><%= cl_image_tag user.photo.key %></span>
+  <div class="courses-list">
+    <h3>My Courses</h3>
+    <% @teams.each do |t| %>
+      <% team = t.team %>
+      <div class="course-card">
+        <%= link_to dashboard_path(team) , :action => 'go' do %>
+          <div class="top-course">
+            <p class="teams-meeting"><%= team.day_of_the_week%>s @ <%= team.time_of_the_day%>:00</p>
+            <p class ="post-cat"><%= team.course.category %> </p>
+          </div>
+          <h3 class="post-text"><%= team.course.title %> on <%= team.course.platform.capitalize %></h3>
+          <div id="team-participants">
+            <% team.users.each do |user| %>
+              <span><%= cl_image_tag user.photo.key %></span>
+            <% end %>
+          </div>
         <% end %>
       </div>
-          <% end %>
+    <% end %>
+  </div>
+  <div class="user-schedule">
+    <h3>My Upcoming Meetings</h3>
 
-    </div>
-  <% end %>
-
-</div>
+  </div>
 </div>

@@ -29,22 +29,24 @@ import "controllers";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { initMapbox } from '../plugins/init_mapbox';
-import { categorySelection } from '../controllers/courses_controller';
+// import { initMapbox } from '../plugins/init_mapbox';
 import { initFlatpickr } from "../plugins/flatpickr";
+import { categorySelection } from '../controllers/courses_filter';
+// import 'mapbox-gl/dist/mapbox-gl.css';
 import { initSweetalert } from '../plugins/init_sweetalert';
-import 'mapbox-gl/dist/mapbox-gl.css';
+
+initSweetalert('#sweet-alert', {
+  title: "Note",
+  text: "You have already joined a team for this course",
+  icon: "info"
+});
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initMapbox();
-  categorySelection();
+  // initMapbox();
   initFlatpickr();
-  initSweetalert('#sweet-alert', {
-    title: "Note",
-    text: "You have already joined a team for this course",
-    icon: "info"
-  });
 });
 
+
+categorySelection();

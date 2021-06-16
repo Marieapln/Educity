@@ -7,13 +7,6 @@ export const categorySelection = () => {
 
   resetButton.addEventListener('click', event => {
     event.currentTarget.classList.add('reset-hidden');
-    // platformRadioButtons.forEach(item => {
-    //   item.children[0].checked = false;
-    // })
-    // categoryRadioButtons.forEach(item => {
-    //   item.children[0].checked = false;
-    //   item.classList.add('platform-hidden');
-    // })
     subcatCheckBoxes.forEach(item => {
       item.children[0].checked = true;
       item.classList.remove('subcategory-hidden');
@@ -21,7 +14,7 @@ export const categorySelection = () => {
     courseResults.forEach(item => {
       item.classList.remove('subcategory-hidden');
     })
-  })
+  });
 
 
   platformRadioButtons.forEach(item => {
@@ -58,7 +51,7 @@ export const categorySelection = () => {
       const categoryToReveal = event.currentTarget.children[0].value.replace(/\W/g, '').toLowerCase();
       // resetButton.classList.remove('reset-hidden');
       courseResults.forEach(item => {
-        if (item.classList.value.includes(categoryToReveal)) {
+        if (item.classList.value.includes(`post-category-${categoryToReveal}`)) {
           item.classList.remove('category-hidden');
         } else {
           item.classList.add('category-hidden');
@@ -66,7 +59,7 @@ export const categorySelection = () => {
         item.classList.remove('subcategory-hidden');
       })
       subcatCheckBoxes.forEach(item => {
-        if (item.classList.value.includes(categoryToReveal)) {
+        if (item.classList.value.includes(`subcategory-item-${categoryToReveal}`)) {
           item.classList.remove('category-hidden');
         } else {
           item.classList.add('category-hidden');
