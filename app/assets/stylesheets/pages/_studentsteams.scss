@@ -1,3 +1,45 @@
-.dsahboard-container {
-  background-color: black;
+.dashboard-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.courses-list {
+  width: 45%;
+  padding: 20px;
+  background-color: $my-lilac;
+}
+
+.course-card {
+  margin: 10px auto;
+  width: 80%;
+}
+
+.user-schedule {
+  width: 45%;
+  padding: 20px;
+  background-color: $my-green;
+}
+
+.list-inline-item-color-1 {
+  color: $rand-dark-1;
+  background-color: $rand-pastel-1;
+    border: 1px solid rgba($rand-dark-1, 0.3);
+}
+
+.list-inline-item-color-2 {
+  color: $rand-dark-2;
+  background-color: $rand-pastel-2;
+    border: 1px solid rgba($rand-dark-2, 0.3);
+}
+
+.list-inline-item-color-3 {
+  color: $rand-dark-3;
+  background-color: $rand-pastel-3;
+    border: 1px solid rgba($rand-dark-3, 0.3);
+}
+
+.list-inline-item-color-4 {
+  color: $rand-dark-4;
+  background-color: $rand-pastel-4;
+    border: 1px solid rgba($rand-dark-4, 0.3);
 }

@@ -20,7 +20,7 @@
   <div id= "team-participants-lg">
     <%  StudentsTeam.where(team_id: @team.id).each do |st| %>
 
-          <span><%= cl_image_tag st.user.photo.key %></span>
+          <span class="list-inline-item list-inline-item-color-<%= (st.user.id % 4) + 1 %>"><%= st.user.first_name %> <%= cl_image_tag st.user.photo.key %></span>
 
     <% end %>
 
