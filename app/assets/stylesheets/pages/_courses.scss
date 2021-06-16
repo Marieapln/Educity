@@ -33,6 +33,10 @@
   border-left: 4px solid $udemy;
 }
 
+#Codecademy{
+  border-left: 4px solid $codecademy;
+}
+
 .post {
   color: my-navy !important;
   display: block;
@@ -155,4 +159,24 @@
   transform: scale(0);
   position: absolute;
   top: 0;
+}
+
+#url {
+  border: 2px solid white !important;
+  border-bottom: 3px solid $my-green !important;
+  width:100%;
+}
+
+#addcourse {
+    width:100%;
+    margin: 20px 0;
+
+}
+
+#createcourse{
+    margin-left:0;
+    margin-right:0;
+    height:auto;
+    width:auto;
+
 }

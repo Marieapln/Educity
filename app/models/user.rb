@@ -9,5 +9,5 @@ class User < ApplicationRecord
   has_many :teams, through: :students_teams
   has_many :courses, through: :teams
   has_many :questionnaires
-
+  has_many :chats
 end

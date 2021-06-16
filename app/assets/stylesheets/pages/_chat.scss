@@ -1,0 +1,153 @@
+
+ul {    list-style-type: none;
+}
+.chat {
+  margin-top:30px;
+  margin-right:40px;
+  width: 100%;
+  float:left;
+  // box-shadow:var(--box-shadow);
+
+  color: #434651;
+
+  .chat-header {
+    padding: 10px;
+    border-bottom: 4px solid $light-gray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+
+
+    img {
+      float: left;
+    }
+
+    .chat-about {
+      padding-left: 10px;
+      margin-top: 6px;
+    }
+
+    .chat-with {
+text-align: center;
+      width:100%;
+      margin-right:auto;
+      margin-left:auto;
+    }
+
+    .chat-num-messages {
+      color: $gray;
+    }
+
+  }
+.chat{
+     background-color:white;
+}
+  .chat-history {
+
+    padding: 30px 30px 20px;
+    border-bottom: 3px solid $light-gray;
+    overflow-y: scroll;
+
+    .message-data {
+      margin-bottom: 5px;
+    }
+
+    .message-data-time {
+      color: lighten($gray, 8%);
+      padding-left: 6px;
+    }
+
+    .message {
+      color: white;
+      padding: 15px 20px;
+      line-height: 26px;
+      font-size: 16px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      width: 90%;
+      position: relative;
+
+
+    }
+
+    .my-message {
+      background: $my-mustard;
+      color: $my-navy;
+    }
+
+    .other-message {
+      background: $my-blue;
+      color: $my-navy;
+    }
+
+  }
+
+  .chat-message {
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    .textarea {
+      width: 100%;
+      border: none;
+      padding: 10px 20px;
+      font: 14px/22px "Lato", Arial, sans-serif;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      resize: none;
+
+    }
+
+
+    .chat-button {
+      float: right;
+      color: darken($my-lilac, 7%);
+      font-size: 16px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      background: white;
+
+      &:hover {
+        color: darken($my-navy, 7%);
+      }
+    }
+  }
+}
+
+.online, .offline, .me {
+    margin-right: 3px;
+    font-size: 10px;
+  }
+
+.other {
+  color: $my-mustard;
+}
+
+
+
+.me {
+  color: $my-blue;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.float-right {
+  float: right;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+

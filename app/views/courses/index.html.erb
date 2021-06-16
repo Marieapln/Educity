@@ -92,10 +92,10 @@
         <h3 class="modal-title">Told you 👀 </h3>
         <p>To help broaden Educity's horizons, simply enter the link of the course.</p>
       </div>
-      <div class="modal-input">
+      <div class="modal-input" id="createcourse">
         <%= form_with url: create_course_path do |form| %>
           <%= form.text_field :url %>
-          <%= form.submit "Add Course", class: 'btn btn-primary' %>
+          <%= form.submit "Add Course", class: 'btn btn-primary', id:'addcourse' %>
         <% end %>
       </div>
     </div><!-- /.modal-content -->
