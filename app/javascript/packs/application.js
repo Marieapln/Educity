@@ -40,11 +40,12 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   categorySelection();
+
+});
+
   initFlatpickr();
   initSweetalert('#sweet-alert', {
     title: "Note",
     text: "You have already joined a team for this course",
     icon: "info"
   });
-});
-

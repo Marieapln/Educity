@@ -4,7 +4,11 @@ class TeamsController < ApplicationController
 
   def index
     @course = Course.find(params[:course_id])
+    begin
     @teams = Team.where(course_id: @course.id, time_of_the_day: desired_start_time, duration: desired_duration, day_of_the_week: desired_days)
+  rescue NoMethodError => e
+    @teams = []
+  end
     @team = Team.new
     @team.course = Course.find(params[:course_id])
   end
@@ -16,6 +20,10 @@ class TeamsController < ApplicationController
     @chat = Chat.new
   end
 
+  def new
+    @team = Team.new
+    @course = Course.find(params[:course_id])
+  end
 
 
   def create
