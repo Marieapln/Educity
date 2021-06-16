@@ -11,7 +11,7 @@
     </div>
     <div id="team-participants">
         <% @team.users.each do |user| %>
-          <span class="list-inline-item list-inline-item-color-<%= (user.id % 4) + 1 %>"><%= cl_image_tag user.photo.key %></span>
+          <%= cl_image_tag user.photo.key %>
         <% end %>
     </div>
   </div>

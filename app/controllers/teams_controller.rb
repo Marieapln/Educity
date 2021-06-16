@@ -4,7 +4,8 @@ class TeamsController < ApplicationController
 
   def index
     @course = Course.find(params[:course_id])
-    @teams = Team.where(course_id: @course.id, time_of_the_day: desired_start_time, duration: desired_duration, day_of_the_week: desired_days)
+    @teams = Team.where(course_id: @course.id, time_of_the_day: desired_time_of_the_day, duration: desired_duration,
+                        day_of_the_week: desired_days)
     @team = Team.new
     @team.course = Course.find(params[:course_id])
   end
@@ -16,8 +17,6 @@ class TeamsController < ApplicationController
     @chat = Chat.new
   end
 
-
-
   def create
     @user = current_user
     @team = Team.create(list_params)
@@ -27,10 +26,10 @@ class TeamsController < ApplicationController
     if @team.save
       StudentsTeam.new(team_id: @team.id, user_id: @user.id).save
       redirect_to students_teams_path
+    else
+      render :new
     end
-
   end
-
 
   private
 
@@ -46,7 +45,7 @@ class TeamsController < ApplicationController
     @questionnaire = Questionnaire.where(user_id: current_user).last
   end
 
-  def desired_start_time
+  def desired_time_of_the_day
     hours_to_include = []
     (7..11).each { |x| hours_to_include << x } if @questionnaire.when.include?('Mornings')
     (12..14).each { |x| hours_to_include << x } if @questionnaire.when.include?('Lunch Breaks')

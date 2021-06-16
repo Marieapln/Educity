@@ -1,8 +1,7 @@
 <div class="dashboard-container">
   <div class="courses-list">
     <h3>My Courses</h3>
-    <% @teams.each do |t| %>
-      <% team = t.team %>
+    <% @teams.each do |team| %>
       <div class="course-card">
         <%= link_to dashboard_path(team) , :action => 'go' do %>
           <div class="top-course">
@@ -12,7 +11,7 @@
           <h3 class="post-text"><%= team.course.title %> on <%= team.course.platform.capitalize %></h3>
           <div id="team-participants">
             <% team.users.each do |user| %>
-              <span class="list-inline-item list-inline-item-color-<%= (user.id % 4) + 1 %>"><%= user.first_name %><%= cl_image_tag user.photo.key %></span>
+              <%= cl_image_tag user.photo.key %>
             <% end %>
           </div>
         <% end %>
@@ -21,6 +20,8 @@
   </div>
   <div class="user-schedule">
     <h3>My Upcoming Meetings</h3>
-
+    <%= month_calendar do |date| %>
+      <%= date %>
+    <% end %>
   </div>
 </div>
