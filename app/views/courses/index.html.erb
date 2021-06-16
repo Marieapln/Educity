@@ -46,7 +46,7 @@
       <% end %>
       <% subcats = subcatlist.join(' ') %>
 
-      <span class="post post-category-<%= course.category.downcase.gsub(/\W/, '') %> post-platform-<%= course.platform.downcase.gsub(/\W/, '') %> <%= subcats %>">
+      <span class="post post-category-<%= course.category.downcase.gsub(/\W/, '') %> post-platform-<%= course.platform.downcase.gsub(/\W/, '') %> <%= subcats %>" id="<%= course.platform %>">
 
         <%= link_to new_questionnaire_path(course)do %>
           <li>
