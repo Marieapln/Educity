@@ -68,7 +68,7 @@
       <% end %>
       <% subcats = subcatlist.join(' ') %>
       <span class="post post-category-<%= course.category.downcase.gsub(/\W/, '') %> <%= subcats %>" id="<%= course.platform %>" style="color: #0E3959" >
-          <li id="sweet-alert">
+          <li class="sweet-alert">
             <div class="post-top">
               <p class ="post-cat"><%= course.category %> </p>
               <p class="post-pop"><%= course.users.count %> learners</p>
