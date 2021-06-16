@@ -63,7 +63,10 @@ class CoursesController < ApplicationController
       subcategories << html_doc.search('.clp-component-render').search('a')[2].text.strip
       hours = html_doc.search('.ud-component--course-landing-page-udlite--curriculum').search('span')[1].text.strip.match(/\d+h/)[0].to_i
     end
-    Course.create(title: title, url: @url, platform: platform, category: category, subcategories: subcategories, course_length: hours)
+    course = Course.new(title: title, url: @url, platform: platform, category: category, subcategories: subcategories, course_length: hours)
+    if course.save
+      redirect_to new_team_path(course)
+    end
   end
 
   def show

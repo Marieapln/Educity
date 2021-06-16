@@ -3,6 +3,8 @@
 }
 .modal-content{
   padding: 0 40px 60px 40px;
+  border: 1px solid white !important;
+
 }
 
 .close {
@@ -30,4 +32,11 @@
    margin-left: auto;
     margin-right: auto;
     width: 100%;
+}
+
+#new-team-form{
+width: 700px;
+margin-left:auto;
+margin-right:auto;
+padding: 40px;
 }
