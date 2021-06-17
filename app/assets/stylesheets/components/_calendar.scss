@@ -22,24 +22,26 @@
 }
 
 .meeting {
+  p{
+    font-size:12px;
+  }
   color: white;
   padding: 8px 24px;
-  border-radius: 4px;
+  border-radius: 5px;
   background: $my-navy;
   transition: background 0.3s ease;
-  .course-time{
-    opacity: 0;
-  }
+
 }
 
 .meeting:hover {
   background: darken($my-mustard, 15%);
   color: white;
-  .course-time{
-    opacity: 1;
-  }
+
 }
 
+a:hover {
+  text-decoration: none !important;
+}
 .simple-calendar .prev-month {
     background: $my-blue !important;
 }
