@@ -42,6 +42,17 @@
 
 }
 
+#Codecademy.meeting {
+  background: $my-lilac !important;
+}
+#Udemy.meeting {
+  background: lighten($udemy, 50%) !important;
+}
+#Coursera.meeting {
+  background: $my-blue !important;
+}
+
+
 .meeting:hover {
   background: darken($my-mustard, 15%);
   color: white;

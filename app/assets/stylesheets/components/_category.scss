@@ -15,6 +15,8 @@
 .category-selector {
   position: absolute;
   transform: scale(0);
+    vertical-align: middle;
+
 }
 
 .category-selector + label {
@@ -24,29 +26,29 @@
   width: 100%;
   font-size: 12px;
   text-align: center;
-  line-height: 25px;
-  padding: 0;
-  margin: 0;
+  // padding: 0;
+  // margin: 0;
   border: 1px solid #EAEAEA;
   border-radius: 4px;
   background-color: white;
   height: 50px;
-  min-height: 100%;
+  margin-bottom: 10px;
 }
 
 .category-selector:checked + label {
-  color: white !important;
+  color: $my-navy !important;
+  background: $my-lilac;
 }
 
 
-#course_category + label {
-  color: #e510b7;
-}
+// #course_category_ + label {
+//   color: #e510b7;
+// }
 
-#course_category:checked + label {
-  background-color: #e510b7;
-  border-color: #e510b7;
-}
+// #course_category:checked + label {
+//   background-color: #e510b7;
+//   border-color: #e510b7;
+// }
 
 
 // #course_category_it__software + label {
