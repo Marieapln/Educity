@@ -141,126 +141,26 @@ file = URI.open("https://avatars.githubusercontent.com/u/174759?v=4")
 user.photo.attach(io:file, filename: "rob.png")
   puts "Created user account for #{user.first_name} #{user.last_name}"
 
-Course.create!(category: "Arts and Humanities",
-platform: "Udemy",
-title: "RUNdamentals: The Essential Modern Piano Runs Guide",
-url: "https://www.udemy.com/course/rundamentals/",
-course_length: 1,
-subcategories: ["Music", "Music Techniques", "Piano"])
-Course.create!(category: "Arts and Humanities",
-platform: "Udemy",
-title: "Piano for Singer/Songwriters | Write Songs and Perform Live!",
-url: "https://www.udemy.com/course/pianoforsingersongwriters/",
-course_length: 3,
-subcategories: ["Music", "Instruments", "Piano"])
-Course.create!(category: "Arts and Humanities",
-platform: "Udemy",
-title: "Jazz for the Curious Guitarist",
-url: "https://www.udemy.com/course/jazz-for-the-curious-guitarist/",
-course_length: 13,
-subcategories: ["Music", "Instruments", "Guitar"])
-Course.create!(category: "Arts and Humanities",
-platform: "Udemy",
-title: "Ultimate Black Metal Guitar!",
-url: "https://www.udemy.com/course/ultimate-black-metal-guitar/",
-course_length: 5,
-subcategories: ["Music", "Music Techniques", "Guitar"])
-Course.create!(category: "Development",
-platform: "Udemy",
-title: "Ruby Metaprogramming - Complete Course",
-url: "https://www.udemy.com/course/ruby-metaprogramming/",
-course_length: 4,
-subcategories: ["Programming Languages", "Ruby"])
-Course.create!(category: "Development",
-platform: "Udemy",
-title: "Complete JAVASCRIPT with HTML5,CSS3 from zero to Expert-2021",
-url: "https://www.udemy.com/course/build-responsive-website-using-html5-css3-js-and-bootstrap-p/",
-course_length: 17,
-subcategories: ["Programming Languages", "JavaScript"])
-Course.create!(category: "Development",
-platform: "Udemy",
-title: "Complete Guide to TensorFlow for Deep Learning with Python",
-url: "https://www.udemy.com/course/complete-guide-to-tensorflow-for-deep-learning-with-python/",
-course_length: 14,
-subcategories: ["Python", "Deep Learning"])
-Course.create!(category: "Development",
-platform: "Udemy",
-title: "NLP - Natural Language Processing with Python",
-url: "https://www.udemy.com/course/nlp-natural-language-processing-with-python/",
-course_length: 11,
-subcategories: ["Python", "Natural Language Processing"])
-Course.create!(category: "Arts and Humanities",
-platform: "Udemy",
-title: "The Secrets to Drawing",
-url: "https://www.udemy.com/course/the-secrets-to-drawing/",
-course_length: 5,
-subcategories: ["Arts & Crafts", "Drawing"])
-Course.create!(category: "Arts and Humanities",
-platform: "Udemy",
-title: "Watercolor Painting Beginner Next Level Techniques & Effects",
-url: "https://www.udemy.com/course/watercolor-painting-next-level-techniques-effects/",
-course_length: 4,
-subcategories: ["Arts & Crafts", "Watercolor Painting"])
-Course.create!(category: "Arts and Humanities",
-platform: "Udemy",
-title: "Mastering the Art of Macramé",
-url: "https://www.udemy.com/course/mastering-the-art-of-macrame/",
-course_length: 17,
-subcategories: ["Arts & Crafts", "Crafting"])
-Course.create!(category: "Arts and Humanities",
-platform: "Udemy",
-title: "Learn to Make a Basic Stained Glass Window",
-url: "https://www.udemy.com/course/basic-leaded-stained-glass/",
-course_length: 2,
-subcategories: ["Arts & Crafts", "Crafting"])
-Course.create!(category: "Development",
-platform: "Coursera",
-title: "Programming for Everybody (Getting Started with Python)",
-url: "https://www.coursera.org/learn/python",
-course_length: 1,
-subcategories: ["Python", "Programming Languages"])
-Course.create!(category: "Development",
-platform: "Coursera",
-title: "Applied Data Science with Python Specialization",
-url: "https://www.coursera.org/specializations/data-science-python",
-course_length: 35,
-subcategories: ["Python", "Programming Languages"])
-Course.create!(category: "Arts and Humanities",
-platform: "Coursera",
-title: "How to Play Guitar Specialization",
-url: "https://www.coursera.org/specializations/play-guitar",
-course_length: 15,
-subcategories: ["Music", "Guitar", "Instruments"])
-Course.create!(category: "Arts and Humanities",
-platform: "Coursera",
-title: "Music as Biology: What We Like to Hear and Why",
-url: "https://www.coursera.org/learn/music-as-biology",
-course_length: 17,
-subcategories: ["Music", "Biology"])
-Course.create!(category: "Arts and Humanities",
-platform: "Coursera",
-title: "The Blues: Understanding and Performing an American Art Form",
-url: "https://www.coursera.org/learn/the-blues",
-course_length: 11,
-subcategories: ["Music", "Guitar"])
-Course.create!(category: "Development",
-platform: "Codecademy",
-title: "Learn the Basics of Blockchain with Python",
-url: "https://www.codecademy.com/learn/introduction-to-blockchain",
-course_length: 2,
-subcategories: ["Python", "Programming Languages"])
-Course.create!(category: "Development",
-platform: "Codecademy",
-title: "Learn Game Development with Phaser.js",
-url: "https://www.codecademy.com/learn/learn-phaser",
-course_length: 9,
-subcategories: ["JavaScript", "Programming Languages"])
-Course.create!(category: "Development",
-platform: "Codecademy",
-title: "Learn jQuery",
-url: "https://www.codecademy.com/learn/learn-jquery",
-course_length: 9,
-subcategories: ["JavaScript", "Programming Languages"])
+Course.create!(category: "Arts and Humanities",platform: "Udemy",title: "RUNdamentals: The Essential Modern Piano Runs Guide",url: "https://www.udemy.com/course/rundamentals/",course_length: 1,subcategories: ["Music", "Music Techniques", "Piano"])
+Course.create!(category: "Arts and Humanities",platform: "Udemy",title: "Jazz for the Curious Guitarist",url: "https://www.udemy.com/course/jazz-for-the-curious-guitarist/",course_length: 13,subcategories: ["Music", "Instruments", "Guitar"])
+Course.create!(category: "Arts and Humanities",platform: "Coursera",title: "Music as Biology: What We Like to Hear and Why",url: "https://www.coursera.org/learn/music-as-biology",course_length: 17,subcategories: ["Music", "Biology"])
+Course.create!(category: "Development",platform: "Coursera",title: "Applied Data Science with Python Specialization",url: "https://www.coursera.org/specializations/data-science-python",course_length: 35,subcategories: ["Python", "Programming Languages"])
+Course.create!(category: "Development",platform: "Udemy",title: "Ruby Metaprogramming - Complete Course",url: "https://www.udemy.com/course/ruby-metaprogramming/",course_length: 4,subcategories: ["Programming Languages", "Ruby"])
+Course.create!(category: "Arts and Humanities",platform: "Udemy",title: "Ultimate Black Metal Guitar!",url: "https://www.udemy.com/course/ultimate-black-metal-guitar/",course_length: 5,subcategories: ["Music", "Music Techniques", "Guitar"])
+Course.create!(category: "Development",platform: "Udemy",title: "Complete JAVASCRIPT with HTML5,CSS3 from zero to Expert-2021",url: "https://www.udemy.com/course/build-responsive-website-using-html5-css3-js-and-bootstrap-p/",course_length: 17,subcategories: ["Programming Languages", "JavaScript"])
+Course.create!(category: "Development",platform: "Codecademy",title: "Learn jQuery",url: "https://www.codecademy.com/learn/learn-jquery",course_length: 9,subcategories: ["JavaScript", "Programming Languages"])
+Course.create!(category: "Arts and Humanities",platform: "Udemy",title: "Piano for Singer/Songwriters | Write Songs and Perform Live!",url: "https://www.udemy.com/course/pianoforsingersongwriters/",course_length: 3,subcategories: ["Music", "Instruments", "Piano"])
+Course.create!(category: "Arts and Humanities",platform: "Udemy",title: "Mastering the Art of Macramé",url: "https://www.udemy.com/course/mastering-the-art-of-macrame/",course_length: 17,subcategories: ["Arts & Crafts", "Crafting"])
+Course.create!(category: "Arts and Humanities",platform: "Udemy",title: "Watercolor Painting Beginner Next Level Techniques & Effects",url: "https://www.udemy.com/course/watercolor-painting-next-level-techniques-effects/",course_length: 4,subcategories: ["Arts & Crafts", "Watercolor Painting"])
+Course.create!(category: "Development",platform: "Coursera",title: "Programming for Everybody (Getting Started with Python)",url: "https://www.coursera.org/learn/python",course_length: 1,subcategories: ["Python", "Programming Languages"])
+Course.create!(category: "Development",platform: "Udemy",title: "Complete Guide to TensorFlow for Deep Learning with Python",url: "https://www.udemy.com/course/complete-guide-to-tensorflow-for-deep-learning-with-python/",course_length: 14,subcategories: ["Python", "Deep Learning"])
+Course.create!(category: "Arts and Humanities",platform: "Udemy",title: "The Secrets to Drawing",url: "https://www.udemy.com/course/the-secrets-to-drawing/",course_length: 5,subcategories: ["Arts & Crafts", "Drawing"])
+Course.create!(category: "Development",platform: "Codecademy",title: "Learn the Basics of Blockchain with Python",url: "https://www.codecademy.com/learn/introduction-to-blockchain",course_length: 2,subcategories: ["Python", "Programming Languages"])
+Course.create!(category: "Arts and Humanities",platform: "Udemy",title: "Learn to Make a Basic Stained Glass Window",url: "https://www.udemy.com/course/basic-leaded-stained-glass/",course_length: 2,subcategories: ["Arts & Crafts", "Crafting"])
+Course.create!(category: "Arts and Humanities",platform: "Coursera",title: "The Blues: Understanding and Performing an American Art Form",url: "https://www.coursera.org/learn/the-blues",course_length: 11,subcategories: ["Music", "Guitar"])
+Course.create!(category: "Development",platform: "Udemy",title: "NLP - Natural Language Processing with Python",url: "https://www.udemy.com/course/nlp-natural-language-processing-with-python/",course_length: 11,subcategories: ["Python", "Natural Language Processing"])
+Course.create!(category: "Arts and Humanities",platform: "Coursera",title: "How to Play Guitar Specialization",url: "https://www.coursera.org/specializations/play-guitar",course_length: 15,subcategories: ["Music", "Guitar", "Instruments"])
+Course.create!(category: "Development",platform: "Codecademy",title: "Learn Game Development with Phaser.js",url: "https://www.codecademy.com/learn/learn-phaser",course_length: 9,subcategories: ["JavaScript", "Programming Languages"])
 
 n = User.all.count
 users = Array(1..n)
