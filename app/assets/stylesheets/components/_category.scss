@@ -1,6 +1,6 @@
 .category-wrapper {
-  width: 350px;
-  padding:10px;
+  width: 500px;
+  padding:10px ;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,7 +24,7 @@
   cursor: pointer;
   box-sizing: border-box;
   width: 100%;
-  font-size: 12px;
+  // font-size: 12px;
   text-align: center;
   // padding: 0;
   // margin: 0;
@@ -109,7 +109,7 @@
 .courses-category-block {
   position: relative;
   display: flex;
-  height: 250px;
+  height: 140px;
   width: 100%;
   background-color: white;
   align-items: center;
