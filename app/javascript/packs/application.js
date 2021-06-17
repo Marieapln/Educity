@@ -54,6 +54,7 @@ document.addEventListener('turbolinks:load', () => {
   // });
 
 
+
 document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
 });
