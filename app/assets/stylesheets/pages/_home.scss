@@ -44,7 +44,7 @@
 }
 
 .home {
-  padding: 75px;
+  padding: 40px 75px;
 }
 
 .home > p {
@@ -81,6 +81,13 @@
 
 .column-home {
   width: 400px;
+  position: relative;
+  p {
+    position: absolute;
+    bottom: 12px;
+    left: 50px;
+    width: 70%;
+  }
 }
 
 .row-popular {
@@ -125,7 +132,7 @@
   flex-direction: row;
   align-content: space-around;
   justify-content: space-around;
-  margin: 20px;
+  margin: 5px;
 }
 
 .course-list-home {
@@ -162,7 +169,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  margin: 5px;
 }
 
 ul {
