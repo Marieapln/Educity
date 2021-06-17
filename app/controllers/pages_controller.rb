@@ -4,7 +4,10 @@ class PagesController < ApplicationController
     # before_action :set_categories, only: %i[home]
     # before_action :set_subcategories, only: %i[home]
 
-  def home; end
+  def home
+    @new_courses = Course.order(created_at: :desc).limit(5)
+    @popular_courses = Course.all.to_a.sort_by {|c| -c.users.count}.first(5)
+  end
 
   def index
 
@@ -16,8 +19,6 @@ class PagesController < ApplicationController
 
   # Or, for a weekly view:
     @meetings = Meeting.where(starts_at: start_date.beginning_of_week..start_date.end_of_week)
-end
-
-
-
+  end
+ 
 end
