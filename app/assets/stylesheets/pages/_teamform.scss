@@ -27,6 +27,15 @@
 #team_start_date{
   background-color:white;
 }
+.f-input > input{
+  background-color:white !important;
+  border: 1px solid #eee !important;
+  color: black !important;
+}
+
+.form-control:disabled, .form-control[readonly] {
+  background-color: white !important;
+}
 
 .tm-btn > .btn{
    margin-left: auto;
@@ -39,4 +48,8 @@ width: 700px;
 margin-left:auto;
 margin-right:auto;
 padding: 40px;
+}
+
+.datepicker {
+  background-color:white !important;
 }
