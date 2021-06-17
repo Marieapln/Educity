@@ -45,13 +45,14 @@ document.addEventListener('turbolinks:load', () => {
 });
 
   initFlatpickr();
-  initSweetalert('#sweet-alert', {
-    title: "Note",
-    text: "You have already joined a team for this course",
-    icon: "info"
-  });
 
-  
+
+  // initSweetalert('#sweet-alert', {
+  //   title: "Note",
+  //   text: "You have already joined a team for this course",
+  //   icon: "info"
+  // });
+
 
 document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();

@@ -1,8 +1,12 @@
 require 'uri'
+require 'date'
+
 
 DatabaseCleaner.clean_with(:truncation)
 
 days = %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
+m = Date.new(2021,6,14)
+start = [m, m+1, m+2, m+3, m+4, m+5, m+6]
 
 cities = %w(London)
 
@@ -312,12 +316,24 @@ url: "https://www.coursera.org/specializations/modern-contemporary-art-design",
 course_length: 21,
   subcategories: ["Courses", "Photography", "Design", "Art", "History", "Museums", "Creativity", "Art History", "Art Direction"])
 
+
+n = User.all.count
+users = Array(1..n)
+
+Team.all.each do |team|
+  rand(2..3).times do
+    StudentsTeam.create!(team_id: team.id, user_id: rand(1..n))
+  end
+end
 city_teams_count = 0
 cities.count.times do
   Course.all.each do |course|
     rand(1..2).times do
       puts "Creating team for #{course.title} in #{cities[city_teams_count]}"
-      Team.create!(course_id: course.id, day_of_the_week: days.sample, time_of_the_day: rand(0..23), duration: rand(1..4), city: cities[city_teams_count])
+      day = days.sample
+      time = rand(6..20)
+      start_date = start[days.index(day)] + time.hours
+      Team.create!(course_id: course.id, day_of_the_week: day, start_date: start_date, time_of_the_day: time, duration: rand(1..4), city: cities[city_teams_count])
       puts "Team created"
     end
   end
@@ -339,3 +355,7 @@ Team.all.each do |team|
   end
   puts "Added #{users_to_add_count}"
 end
+
+
+
+

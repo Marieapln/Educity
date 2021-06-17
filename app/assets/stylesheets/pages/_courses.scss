@@ -1,4 +1,6 @@
+
 .new-course-q {
+  width:650px;
   color:$my-navy;
   background-color: $my-yellow;
   padding: 1rem;
@@ -12,12 +14,13 @@
 }
 
 .courses-container {
+  padding: 40px;
   margin-top:50px;
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
   overflow: hidden;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .post > a {
@@ -37,6 +40,9 @@
   border-left: 4px solid $codecademy;
 }
 
+.course-list{
+  width:650px;
+}
 .post {
   color: my-navy !important;
   display: block;
@@ -140,8 +146,8 @@
 }
 
 .courses-filter-form form {
-  max-width: 75%;
-  width: 75vw;
+  left: 50px;
+  width:350px;
   display: flex;
   flex-direction: column;
   align-items: center;
