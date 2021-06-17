@@ -8,7 +8,7 @@
                   <%= link_to dashboard_path(team) , :action => 'go' do %>
 
     <div class="top-course">
-      <p class="teams-meeting"><%= team.day_of_the_week%>s @ <%= team.time_of_the_day%>:00</p>
+      <p class="teams-meeting"><strong><%= team.start_date.strftime('%A') %>s</strong> @ <strong><%= team.start_date.strftime('%l:%M%P') %></strong>, <strong><%= team.duration %> hour<%= 's' if team.duration != 1 %></strong></p>
       <p class ="post-cat"><%= team.course.category %> </p>
     </div>
     <h3 class="post-text"><%= team.course.title %> on <%= team.course.platform.capitalize %></h3>
@@ -30,7 +30,9 @@
     <% meetings.each do |meeting| %>
       <div class="meeting">
         <p><%= meeting.name %></p>
-        <small><%= meeting.time  %></small>
+        <% both_meridians = meeting.start_time.hour < 12 && meeting.end_time > 12 %>
+        <% meeting_time = "#{meeting.start_time.strftime('%l:%M').strip}#{'am' if both_meridians}-#{meeting.end_time.strftime('%l:%M%P').strip}" %>
+        <small><%= meeting_time %></small>
       </div>
     <% end %>
   <% end %>

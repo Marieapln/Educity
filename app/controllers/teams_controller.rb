@@ -5,10 +5,11 @@ class TeamsController < ApplicationController
   def index
     @course = Course.find(params[:course_id])
     begin
-    @teams = Team.where(course_id: @course.id, time_of_the_day: desired_start_time, duration: desired_duration, day_of_the_week: desired_days)
-  rescue NoMethodError => e
-    @teams = []
-  end
+      @teams = Team.where(course_id: @course.id, time_of_the_day: desired_start_time, duration: desired_duration,
+                          day_of_the_week: desired_days)
+    rescue NoMethodError => e
+      @teams = []
+    end
     @team = Team.new
     @team.course = Course.find(params[:course_id])
   end
@@ -25,7 +26,6 @@ class TeamsController < ApplicationController
     @course = Course.find(params[:course_id])
   end
 
-
   def create
     @user = current_user
     @team = Team.create(list_params)
@@ -36,9 +36,7 @@ class TeamsController < ApplicationController
       StudentsTeam.new(team_id: @team.id, user_id: @user.id).save
       redirect_to students_teams_path
     end
-
   end
-
 
   private
 
@@ -58,8 +56,8 @@ class TeamsController < ApplicationController
     hours_to_include = []
     (7..11).each { |x| hours_to_include << x } if @questionnaire.when.include?('Mornings')
     (12..14).each { |x| hours_to_include << x } if @questionnaire.when.include?('Lunch Breaks')
-    (15..18).each { |x| hours_to_include << x } if @questionnaire.when.include?('Afternoons')
-    (19..22).each { |x| hours_to_include << x } if @questionnaire.when.include?('Evenings')
+    (15..17).each { |x| hours_to_include << x } if @questionnaire.when.include?('Afternoons')
+    (18..22).each { |x| hours_to_include << x } if @questionnaire.when.include?('Evenings')
     if @questionnaire.when.include?('Nights')
       (0..6).each { |x| hours_to_include << x }
       hours_to_include << 23
