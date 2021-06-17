@@ -1,5 +1,15 @@
+
+.calh3 {
+  margin: 0 100px 0 0  !important;
+  bottom:0 !important;
+  align-self: flex-end;
+
+}
 .calendar-heading {
   font-weight:600;
+  margin-bottom:20px;
+  display:flex;
+  justify-content: space-between;
 }
 .travel {
   margin:0 40px;

@@ -8,14 +8,14 @@
  display: flex;
  // height: 100vh;
  overflow: hidden;
- margin: 0 auto;
+ margin: 40px auto;
  color:$my-navy;
 
 }
 
 .team-description {
  padding: 40px;
- width: 500px;
+ width: 700px;
  // margin-bottom:75px;
 
  justify-content:space-between;
@@ -27,6 +27,14 @@
 
 #team-participants-lg {
   bottom-margin:50px;
+}
+
+#team-participants-lg img {
+  margin-right:10px;
+     &:hover {
+    transform: scale(1.2);
+    transition-duration:0.3s;
+  }
 }
 
 .team-meeting{
@@ -45,11 +53,3 @@
 }
 
 
-.sticky-notes {
- width: 550px;
-
- display: flex;
- flex-direction: column;
- flex-shrink: 0;
- overflow: auto;
-}

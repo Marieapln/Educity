@@ -27,10 +27,7 @@
   </div>
 </div>
 
-<div class="sticky-notes">
 
-
-</div>
 
 <div class="chat">
 
@@ -93,8 +90,8 @@
 
       <div class="chat-message clearfix">
            <%= simple_form_for @chat, url:  create_message_path do |form| %>
-          <%= form.text_field :message,  placeholder:"Type your message",html: {class: "textarea"} %>
-          <%= form.submit "Send", html: {class: 'chat-button'}%>
+          <%= form.text_field :message,  placeholder:"Type your message",html: {class: "textarea" ,id: "text-input"} %>
+          <%= form.submit "Send" ,class: "btn chat-botton" %>
         <% end %>
 
         <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
