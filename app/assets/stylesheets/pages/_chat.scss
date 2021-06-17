@@ -1,4 +1,6 @@
-
+.righ {
+    top:10vh;
+}
 .chat-header {
     height:8vh;
     padding: 10px;
@@ -30,7 +32,7 @@ text-align: center;
 
   }
 
-.chat-message{
+div.chat-message{
     border-bottom-left-radius: 25px !important;
     border-bottom-right-radius: 25px;
 }
@@ -38,10 +40,17 @@ text-align: center;
 ul {    list-style-type: none;
 }
 .chat {
+     background-color:white;
+    border-top-left-radius: 25px !important;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px !important;
+    border-bottom-right-radius: 25px;
+}
+.chat {
 
-  height:700px;
-
-  margin-left: 50px;
+  height:615px;
+  margin-top:30px;
+  margin-left: 150px;
   width: 500px;
   float:left;
   // box-shadow:var(--box-shadow);
@@ -49,15 +58,9 @@ ul {    list-style-type: none;
   color: #434651;
 
 
-.chat{
-     background-color:white;
-         border-top-left-radius: 25px !important;
-    border-top-right-radius: 25px;
-       border-bottom-left-radius: 25px !important;
-    border-bottom-right-radius: 25px;
-}
+
   .chat-history {
-    height: 60vh;
+    height: 50vh;
       overflow: scroll;
 
     padding: 30px 30px 20px;
@@ -100,7 +103,7 @@ ul {    list-style-type: none;
 
 
   .chat-message {
-    height:20vh;
+    // height:20vh;
 
     padding: 10px;
 
@@ -172,8 +175,8 @@ border: 2px solid $light-gray;
 .chat-botton{
   z-index: 100;
   position: absolute;
-  bottom:210px;
-  right: 160px;
+  bottom:305px;
+  right: 110px;
   font-size:15px;
   padding: 7px !important;
   background: $my-blue;
