@@ -29,7 +29,8 @@
       <p class="teams-meeting"><strong><%= team.start_date.strftime('%A') %>s</strong> @ <strong><%= team.start_date.strftime('%l:%M%P') %></strong>, <strong><%= team.duration %> hour<%= 's' if team.duration != 1 %></strong></p>
       <p class ="post-cat"><%= team.course.category %> </p>
     </div>
-    <h3 class="post-text"><%= team.course.title %> on <%= team.course.platform.capitalize %></h3>
+    <h3 class="post-text"><%= team.course.title %></h3>
+     <p style="font-weight:600" class="post-platform"><%= team.course.platform.capitalize %></p>
             <div id="team-participants">
         <% team.users.each do |user| %>
           <span><%= cl_image_tag user.photo.key %></span>
