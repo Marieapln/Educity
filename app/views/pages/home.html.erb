@@ -1,57 +1,70 @@
-<body class="home-body">
-<div class = "home">
-  <div class="d-flex align-items-center justify-content-between">
-    <div>
-       <h1 class="home-welcome">Welcome to Educity,</h1>
-       <h1 class="home-welcome">the Learners' Community</h1>
-       <p>What would you like to <strong>study <em>socially</em></strong>?</p>
-    </div>
-    <%= image_tag 'home_image-1', width: 500 %>
-</div>
-
-<div class="row-home">
-  <div class="column-home text-center">
-     <%= image_tag 'home_image-2', width: 300, height: 300 %>
-     <p><strong>Find Your Team</strong></p>
-  </div>
-  <div class="column-home text-center">
-     <%= image_tag 'home_image-3', width: 300, height: 300 %>
-     <p class="move-right"><strong>Keep Track Of Your Courses</strong></p>
-  </div>
-  <div class="column-home text-center">
-     <%= image_tag 'home_image-4', width: 300, height: 300 %>
-     <p><strong>Follow Other Courses</strong></p>
-  </div>
-</div>
-
-<h1 class="home-welcome">Popular Courses</h1>
-
-<div class="row-popular cards">
-  <% @new_courses.each do |course| %>
-    <%= link_to new_questionnaire_path(course) do %>
-      <div class="column-popular">
-       <div class="card-category">
-       <%# <%="New Course"%>
-        <%=course.title%><br/>
-        <%=course.created_at%>
-        <%# <%= image_tag 'popular_courses-1', width: 500, height: 500, style: "z-index: 0;" %>
-       </div>     
+<div class="home-body">
+  <div class="home">
+    <div class="banner">
+      <div>
+        <h1 class="home-welcome">Welcome to Educity,</h1>
+        <h1 class="home-welcome">the Learners' Community</h1>
+        <p>What would you like to <strong>study <em>socially</em></strong>?</p>
       </div>
-  <% end %> 
- <% end %>
- <% @popular_courses.each do |course| %>
-  <%= link_to new_questionnaire_path(course) do%>
-  <%# <%= link_to "#{course.title} Learners: #{course.users.count}", new_questionnaire_path(course) do %>
-  <div class="column-popular ">
-    <div class="card-category">
-      <%# <%= "Popular Course"%> 
-      <%= course.title%><br/>
-      <%= "Number of Learners:"%>
-      <%= course.users.count%>
-      <%# <%= image_tag 'list-2', width: 500, height: 500, style: "z-index: 0;" %> 
-    </div>    
+      <%= image_tag 'home_image-1', width: 500 %>
   </div>
-  <% end %>
-  <% end %>
+  <div class="row-home-cont">
+    <div class="row-home">
+      <div class="column-home text-center">
+        <%= image_tag 'home_image-2', width: 300, height: 300 %>
+        <p><strong>Find Your Team</strong></p>
+      </div>
+      <div class="column-home text-center">
+        <%= image_tag 'home_image-3', width: 300, height: 300 %>
+        <p class="move-right"><strong>Keep Track Of Your Courses</strong></p>
+      </div>
+      <div class="column-home text-center">
+        <%= image_tag 'home_image-4', width: 300, height: 300 %>
+        <p><strong>Follow Other Courses</strong></p>
+      </div>
+    </div>
+    <h2 class='top-courses'>Top Picks</h2>
+  </div>
+
+
+  <div class="course-list-home">
+    <div class="course-list-recent">
+      <h3>Recently Added</h3>
+      <ul class="post-row">
+      <% @new_courses.each do |course| %>
+        <span class="post" id="<%= course.platform %>">
+          <%= link_to new_questionnaire_path(course) do %>
+            <li>
+              <div class="post-top">
+                <p class ="post-cat"><%= course.category %> </p>
+                <p class="post-pop">Created <%= (DateTime.now.to_i - course.created_at.to_i)/86400 %> days ago</p>
+              </div>
+              <h3 class="post-text"><%= course.title %></h3>
+              <p style="font-weight:600" class="post-platform"><%= course.platform.capitalize %></p>
+            </li>
+          <% end %>
+        </span>
+      <% end %>
+      </ul>
+    </div>
+    <div class="course-list-popular">
+      <h3>Most Popular</h3>
+      <ul class="post-row">
+      <% @popular_courses.each do |course| %>
+        <span class="post" id="<%= course.platform %>">
+          <%= link_to new_questionnaire_path(course) do %>
+            <li>
+              <div class="post-top">
+                <p class ="post-cat"><%= course.category %> </p>
+                <p class="post-pop"><%= course.users.count %> learners</p>
+              </div>
+              <h3 class="post-text"><%= course.title %></h3>
+              <p style="font-weight:600" class="post-platform"><%= course.platform.capitalize %></p>
+            </li>
+          <% end %>
+        </span>
+      <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
-</body>

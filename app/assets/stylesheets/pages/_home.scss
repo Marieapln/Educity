@@ -1,8 +1,8 @@
-
-.home-body{
+.home-body {
   background: linear-gradient(180deg,  #FFEDE3, #FFF5F0, $my-lilac, #FFF5F0,  #FFEDE3,);
-background-size: 1600% 1600%;
-  animation: sunrise 20s ease infinite;}
+  background-size: 1600% 1600%;
+  animation: sunrise 20s ease infinite;
+}
 
 .home-welcome{
   font-size: 50px;
@@ -20,8 +20,6 @@ background-size: 1600% 1600%;
     background-position:  50% 0%;
   }
 }
-
-
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
   color: rgba(1,1,1,0.2) !important;
@@ -78,6 +76,7 @@ background-size: 1600% 1600%;
 .row-home {
   display: flex;
   align-items: center;
+  justify-items: center;
 }
 
 .column-home {
@@ -119,4 +118,61 @@ background-size: 1600% 1600%;
   font-weight: bold;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.course-list-home {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.course-list-recent {
+  display: flex;
+  justify-items: center;
+  margin: 10px;
+  align-items: center;
+}
+
+.course-list-popular {
+  display: flex;
+  justify-items: center;
+  margin: 10px;
+  align-items: center;
+}
+
+.top-courses {
+  font-size: 50px;
+  font-weight: 600;
+  font-family: 'Roboto';
+  align-self: center;
+  margin-top: 60px;
+}
+
+.row-home-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.post-row {
+  display: flex;
+}
+
+.post {
+  margin: 10px;
 }
