@@ -66,6 +66,8 @@ class CoursesController < ApplicationController
     course = Course.new(title: title, url: @url, platform: platform, category: category, subcategories: subcategories, course_length: hours)
     if course.save
       redirect_to new_team_path(course)
+    else
+      render: new
     end
   end
 

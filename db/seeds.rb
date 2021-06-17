@@ -1,7 +1,3 @@
-require 'uri'
-require 'date'
-
-
 DatabaseCleaner.clean_with(:truncation)
 
 days = %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
@@ -14,7 +10,6 @@ user = User.create!(email: "boris@lewagon.fr", password: "password", first_name:
 file = URI.open("https://miro.medium.com/max/3150/1*RNmxOTK2D49plmMyVynqAw.png") # use cloudinary url
 user.photo.attach(io: file, filename: 'boris.jpg', content_type: 'image/png')
   puts "Created user account for #{user.first_name} #{user.last_name}"
-
 
 user= User.create!(email:"egidio@lewagon.co.uk", password: "password", first_name: "Egidio", last_name: "De-Souza")
 file = URI.open("https://avatars.githubusercontent.com/u/71524093?v=4")
@@ -146,176 +141,166 @@ file = URI.open("https://avatars.githubusercontent.com/u/174759?v=4")
 user.photo.attach(io:file, filename: "rob.png")
   puts "Created user account for #{user.first_name} #{user.last_name}"
 
-Course.create!(category: "Data Science",platform: "Coursera",title: "Machine Learning",url: "https://www.coursera.org/learn/machine-learning",course_length: 60,subcategories: ["Machine Learning", "Logistic Regression", "Artificial Neural Network", "Machine Learning (ML) Algorithms", "Machine Learning"])
-
-Course.create!(category: "Data Science",
-platform: "Coursera",
-title: "Data Science Specialization",
-url: "https://www.coursera.org/specializations/jhu-data-science",
-course_length: 77,
-subcategories:
-["Data Analysis",
-  "Github",
-  "Machine Learning",
-  "R Programming",
-  "Regression Analysis",
-  "Data Science",
-  "Rstudio",
-  "Data Analysis",
-  "Debugging",
-  "Data Manipulation",
-  "Regular Expression (REGEX)",
-  "Data Cleansing",
-  "Cluster Analysis"])
-
-Course.create!(category: "Data Science",
-platform: "Coursera",
-title: "Deep Learning Specialization",
-url: "https://www.coursera.org/specializations/deep-learning",
-course_length: 35,
-  subcategories:
-  ["Machine Learning",
-  "Artificial Neural Network",
-  "Convolutional Neural Network",
-  "Tensorflow",
-  "Recurrent Neural Network",
-  "Transformers",
-  "Deep Learning",
-  "Backpropagation",
-  "Python Programming",
-  "Neural Network Architecture",
-  "Mathematical Optimization",
-  "hyperparameter tuning",
-  "Inductive Transfer"])
-
-Course.create!(category: "Data Science",
-platform: "Coursera",
-title: "Data Science: Foundations using R Specialization",
-url: "https://www.coursera.org/specializations/data-science-foundations-r",
-course_length: 40,
-  subcategories:
-  ["Data Analysis",
-  "Data Science",
-  "Machine Learning",
-  "Github",
-  "R Programming",
-  "Exploratory Data Analysis",
-  "Rstudio",
-  "Data Analysis",
-  "Debugging",
-  "Data Manipulation",
-  "Regular Expression (REGEX)",
-  "Data Cleansing",
-  "Cluster Analysis"])
-
-Course.create!(category: "Language Learning",
-platform: "Coursera",
-title: "Improve Your English Communication Skills Specialization",
-url: "https://www.coursera.org/specializations/improve-english",
-course_length: 15,
-  subcategories: ["Learning English", "Professional", "Email Writing", "Presentation", "Writing", "Communication", "Stress", "Public Speaking", "Speech"])
-
-Course.create!(category: "Business",
-platform: "Coursera",
-title: "Career Success Specialization",
-url: "https://www.coursera.org/specializations/career-success",
-course_length: 22,
-  subcategories:
-  ["Business Essentials",
-  "Project Management",
-  "Information Technology (IT) Management",
-  "Communication",
-  "Negotiation",
-  "Leadership",
-  "Team Management",
-  "Task Management",
-  "Management",
-  "Planning",
-  "Plan",
-  "Accounting",
-  "Financial Ratio"])
-
-Course.create!(category: "Business",
-platform: "Coursera",
-title: "Successful Negotiation: Essential Strategies and Skills",
-url: "https://www.coursera.org/learn/negotiation-skills",
-course_length: 17,
-  subcategories: ["Business Essentials", "Strategic Negotiations", "Communication", "Negotiation", "Decision Tree"])
-
-Course.create!(category: "IT & Software",
+Course.create!(category: "Arts and Humanities",
 platform: "Udemy",
-title: "Learn Ethical Hacking From Scratch",
-url: "https://www.udemy.com/course/learn-ethical-hacking-from-scratch/",
+title: "RUNdamentals: The Essential Modern Piano Runs Guide",
+url: "https://www.udemy.com/course/rundamentals/",
+course_length: 1,
+created_at: Thu, 17 Jun 2021 13:10:57 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:10:57 UTC +00:00,
+subcategories: ["Music", "Music Techniques", "Piano"])
+Course.create!(category: "Arts and Humanities",
+platform: "Udemy",
+title: "Piano for Singer/Songwriters | Write Songs and Perform Live!",
+url: "https://www.udemy.com/course/pianoforsingersongwriters/",
+course_length: 3,
+created_at: Thu, 17 Jun 2021 13:11:50 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:11:50 UTC +00:00,
+subcategories: ["Music", "Instruments", "Piano"])
+Course.create!(category: "Arts and Humanities",
+platform: "Udemy",
+title: "Jazz for the Curious Guitarist",
+url: "https://www.udemy.com/course/jazz-for-the-curious-guitarist/",
+course_length: 13,
+created_at: Thu, 17 Jun 2021 13:12:36 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:12:36 UTC +00:00,
+subcategories: ["Music", "Instruments", "Guitar"])
+Course.create!(category: "Arts and Humanities",
+platform: "Udemy",
+title: "Ultimate Black Metal Guitar!",
+url: "https://www.udemy.com/course/ultimate-black-metal-guitar/",
+course_length: 5,
+created_at: Thu, 17 Jun 2021 13:13:07 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:13:07 UTC +00:00,
+subcategories: ["Music", "Music Techniques", "Guitar"])
+Course.create!(category: "Development",
+platform: "Udemy",
+title: "Ruby Metaprogramming - Complete Course",
+url: "https://www.udemy.com/course/ruby-metaprogramming/",
+course_length: 4,
+created_at: Thu, 17 Jun 2021 13:14:55 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:14:55 UTC +00:00,
+subcategories: ["Programming Languages", "Ruby"])
+Course.create!(category: "Development",
+platform: "Udemy",
+title: "Complete JAVASCRIPT with HTML5,CSS3 from zero to Expert-2021",
+url: "https://www.udemy.com/course/build-responsive-website-using-html5-css3-js-and-bootstrap-p/",
+course_length: 17,
+created_at: Thu, 17 Jun 2021 13:15:42 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:15:42 UTC +00:00,
+subcategories: ["Programming Languages", "JavaScript"])
+Course.create!(category: "Development",
+platform: "Udemy",
+title: "Complete Guide to TensorFlow for Deep Learning with Python",
+url: "https://www.udemy.com/course/complete-guide-to-tensorflow-for-deep-learning-with-python/",
+course_length: 14,
+created_at: Thu, 17 Jun 2021 13:16:40 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:16:40 UTC +00:00,
+subcategories: ["Python", "Deep Learning"])
+Course.create!(category: "Development",
+platform: "Udemy",
+title: "NLP - Natural Language Processing with Python",
+url: "https://www.udemy.com/course/nlp-natural-language-processing-with-python/",
+course_length: 11,
+created_at: Thu, 17 Jun 2021 13:17:29 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:17:29 UTC +00:00,
+subcategories: ["Python", "Natural Language Processing"])
+Course.create!(category: "Arts and Humanities",
+platform: "Udemy",
+title: "The Secrets to Drawing",
+url: "https://www.udemy.com/course/the-secrets-to-drawing/",
+course_length: 5,
+created_at: Thu, 17 Jun 2021 13:20:20 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:20:20 UTC +00:00,
+subcategories: ["Arts & Crafts", "Drawing"])
+Course.create!(category: "Arts and Humanities",
+platform: "Udemy",
+title: "Watercolor Painting Beginner Next Level Techniques & Effects",
+url: "https://www.udemy.com/course/watercolor-painting-next-level-techniques-effects/",
+course_length: 4,
+created_at: Thu, 17 Jun 2021 13:20:53 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:20:53 UTC +00:00,
+subcategories: ["Arts & Crafts", "Watercolor Painting"])
+Course.create!(category: "Arts and Humanities",
+platform: "Udemy",
+title: "Mastering the Art of Macramé",
+url: "https://www.udemy.com/course/mastering-the-art-of-macrame/",
+course_length: 17,
+created_at: Thu, 17 Jun 2021 13:21:31 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:21:31 UTC +00:00,
+subcategories: ["Arts & Crafts", "Crafting"])
+Course.create!(category: "Arts and Humanities",
+platform: "Udemy",
+title: "Learn to Make a Basic Stained Glass Window",
+url: "https://www.udemy.com/course/basic-leaded-stained-glass/",
+course_length: 2,
+created_at: Thu, 17 Jun 2021 13:22:28 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:22:28 UTC +00:00,
+subcategories: ["Arts & Crafts", "Crafting"])
+Course.create!(category: "Development",
+platform: "Coursera",
+title: "Programming for Everybody (Getting Started with Python)",
+url: "https://www.coursera.org/learn/python",
+course_length: 1,
+created_at: Thu, 17 Jun 2021 13:24:49 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:24:49 UTC +00:00,
+subcategories: ["Python", "Programming Languages"])
+Course.create!(category: "Development",
+platform: "Coursera",
+title: "Applied Data Science with Python Specialization",
+url: "https://www.coursera.org/specializations/data-science-python",
+course_length: 35,
+created_at: Thu, 17 Jun 2021 13:25:49 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:25:49 UTC +00:00,
+subcategories: ["Python", "Programming Languages"])
+Course.create!(category: "Arts and Humanities",
+platform: "Coursera",
+title: "How to Play Guitar Specialization",
+url: "https://www.coursera.org/specializations/play-guitar",
 course_length: 15,
-  subcategories: ["Network & Security", "Ethical Hacking"])
-
+created_at: Thu, 17 Jun 2021 13:26:52 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:26:52 UTC +00:00,
+subcategories: ["Music", "Guitar", "Instruments"])
 Course.create!(category: "Arts and Humanities",
 platform: "Coursera",
-title: "Graphic Design Specialization",
-url: "https://www.coursera.org/specializations/graphic-design",
-course_length: 18,
-  subcategories:
-  ["Music and Art",
-  "Visual Communication",
-  "Branding Communication",
-  "Graphic Design",
-  "Art History",
-  "Typography",
-  "Creativity",
-  "Graphics",
-  "Design Theory",
-  "Color Theory",
-  "Adobe Illustrator",
-  "History",
-  "Adobe Indesign"])
-
+title: "Music as Biology: What We Like to Hear and Why",
+url: "https://www.coursera.org/learn/music-as-biology",
+course_length: 17,
+created_at: Thu, 17 Jun 2021 13:27:53 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:27:53 UTC +00:00,
+subcategories: ["Music", "Biology"])
 Course.create!(category: "Arts and Humanities",
 platform: "Coursera",
-title: "Indigenous Canada",
-url: "https://www.coursera.org/learn/indigenous-canada",
-course_length: 21,
-  subcategories: ["History", "Art History", "Art", "History", "Mythology"])
-
-Course.create!(category: "Arts and Humanities",
-platform: "Coursera",
-title: "Creative Writing Specialization",
-url: "https://www.coursera.org/specializations/creative-writing",
-course_length: 6,
-  subcategories: ["Music and Art", "Short Story Writing", "Fiction Writing", "Creativity", "Copy Editing"])
-
-Course.create!(category: "Arts and Humanities",
-platform: "Coursera",
-title: "Indigenous Canada",
-url: "https://www.coursera.org/learn/indigenous-canada",
-course_length: 21,
-  subcategories: ["History", "Art History", "Art", "History", "Mythology"])
-
-Course.create!(category: "Physical Science and Engineering",
-platform: "Coursera",
-title: "An Introduction to Programming the Internet of Things (IOT) Specialization",
-url: "https://www.coursera.org/specializations/iot",
-course_length: 18,
-  subcategories:
-  ["Electrical Engineering",
-  "Arduino",
-  "Python Programming",
-  "Internet Of Things (IOT)",
-  "Raspberry Pi",
-  "Microcontroller",
-  "Embedded System Design",
-  "Wireshark",
-  "C Programming",
-  "Debugging",
-  "Computer Programming",
-  "Application Programming Interfaces (API)"])
-
-Course.create!(category: "How It Works",
-platform: "Coursera",
-title: "Modern and Contemporary Art and Design Specialization",
-url: "https://www.coursera.org/specializations/modern-contemporary-art-design",
-course_length: 21,
-  subcategories: ["Courses", "Photography", "Design", "Art", "History", "Museums", "Creativity", "Art History", "Art Direction"])
-
+title: "The Blues: Understanding and Performing an American Art Form",
+url: "https://www.coursera.org/learn/the-blues",
+course_length: 11,
+created_at: Thu, 17 Jun 2021 13:29:51 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:29:51 UTC +00:00,
+subcategories: ["Music", "Guitar"])
+Course.create!(category: "Development",
+platform: "Codecademy",
+title: "Learn the Basics of Blockchain with Python",
+url: "https://www.codecademy.com/learn/introduction-to-blockchain",
+course_length: 2,
+created_at: Thu, 17 Jun 2021 13:30:59 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:30:59 UTC +00:00,
+subcategories: ["Python", "Programming Languages"])
+Course.create!(category: "Development",
+platform: "Codecademy",
+title: "Learn Game Development with Phaser.js",
+url: "https://www.codecademy.com/learn/learn-phaser",
+course_length: 9,
+created_at: Thu, 17 Jun 2021 13:36:59 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:36:59 UTC +00:00,
+subcategories: ["JavaScript", "Programming Languages"])
+Course.create!(category: "Development",
+platform: "Codecademy",
+title: "Learn jQuery",
+url: "https://www.codecademy.com/learn/learn-jquery",
+course_length: 9,
+created_at: Thu, 17 Jun 2021 13:37:09 UTC +00:00,
+updated_at: Thu, 17 Jun 2021 13:37:09 UTC +00:00,
+subcategories: ["JavaScript", "Programming Languages"])
 
 n = User.all.count
 users = Array(1..n)
@@ -355,7 +340,3 @@ Team.all.each do |team|
   end
   puts "Added #{users_to_add_count}"
 end
-
-
-
-
