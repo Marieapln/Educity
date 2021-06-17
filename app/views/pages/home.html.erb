@@ -1,28 +1,57 @@
 <body class="home-body">
 <div class = "home">
-    <div class="d-flex align-items-center justify-content-between">
-     <div>
-        <h1 class="home-welcome">Welcome to Educity,</h1>
-        <h1 class="home-welcome">the Learners' Community</h1>
-        <p>What would you like to <strong>study <em>socially</em></strong>?</p>
-
+  <div class="d-flex align-items-center justify-content-between">
+    <div>
+       <h1 class="home-welcome">Welcome to Educity,</h1>
+       <h1 class="home-welcome">the Learners' Community</h1>
+       <p>What would you like to <strong>study <em>socially</em></strong>?</p>
     </div>
-    <%= image_tag 'home_image-1.svg', width: 500 %>
+    <%= image_tag 'home_image-1', width: 500 %>
 </div>
+
 <div class="row-home">
   <div class="column-home text-center">
-     <%= image_tag 'home_image-2.svg', width: 300, height: 300 %>
-     <p><strong>Find Your Team or create your own</strong></p>
+     <%= image_tag 'home_image-2', width: 300, height: 300 %>
+     <p><strong>Find Your Team</strong></p>
   </div>
   <div class="column-home text-center">
-     <%= image_tag 'home_image-3.svg', width: 300, height: 300 %>
+     <%= image_tag 'home_image-3', width: 300, height: 300 %>
      <p class="move-right"><strong>Keep Track Of Your Courses</strong></p>
   </div>
   <div class="column-home text-center">
-     <%= image_tag 'home_image-4.svg', width: 300, height: 300 %>
-     <p><strong>Get inspired</strong></p>
+     <%= image_tag 'home_image-4', width: 300, height: 300 %>
+     <p><strong>Follow Other Courses</strong></p>
   </div>
 </div>
 
+<h1 class="home-welcome">Popular Courses</h1>
 
+<div class="row-popular cards">
+  <% @new_courses.each do |course| %>
+    <%= link_to new_questionnaire_path(course) do %>
+      <div class="column-popular">
+       <div class="card-category">
+       <%# <%="New Course"%>
+        <%=course.title%><br/>
+        <%=course.created_at%>
+        <%# <%= image_tag 'popular_courses-1', width: 500, height: 500, style: "z-index: 0;" %>
+       </div>     
+      </div>
+  <% end %> 
+ <% end %>
+ <% @popular_courses.each do |course| %>
+  <%= link_to new_questionnaire_path(course) do%>
+  <%# <%= link_to "#{course.title} Learners: #{course.users.count}", new_questionnaire_path(course) do %>
+  <div class="column-popular ">
+    <div class="card-category">
+      <%# <%= "Popular Course"%> 
+      <%= course.title%><br/>
+      <%= "Number of Learners:"%>
+      <%= course.users.count%>
+      <%# <%= image_tag 'list-2', width: 500, height: 500, style: "z-index: 0;" %> 
+    </div>    
+  </div>
+  <% end %>
+  <% end %>
+</div>
 </body>
