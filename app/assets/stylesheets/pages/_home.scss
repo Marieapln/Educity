@@ -81,6 +81,13 @@
 
 .column-home {
   width: 400px;
+  position: relative;
+  p {
+    position: absolute;
+    bottom: 12px;
+    left: 50px;
+    width: 70%;
+  }
 }
 
 .row-popular {
