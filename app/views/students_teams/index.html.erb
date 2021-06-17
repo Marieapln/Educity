@@ -6,7 +6,7 @@
     <% meetings.each do |meeting| %>
     <% t = meeting.team %>
      <%= link_to dashboard_path(t) , :action => 'go' do %>
-      <div class="meeting">
+      <div class="meeting" id="<%= t.course.platform%>">
         <p class="course-title"><%= meeting.name %></p>
         <p class="course-time"><%= meeting.time  %> </p>
       </div>
