@@ -1,4 +1,11 @@
-
+.filter-form{
+  padding: 16px;
+  height: 600px;
+  background-color:white;
+  width: 550px;
+  margin-right: 75px;
+  box-shadow:var(--box-shadow);
+}
 .new-course-q {
   width:650px;
   color:$my-navy;
@@ -146,8 +153,7 @@
 }
 
 .courses-filter-form form {
-  // left: 50px;
-  width:350px;
+  // width:500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -193,4 +199,12 @@
     margin-right:0;
     height:auto;
     width:auto;
+}
+
+#reset {
+    color: darken($my-lilac, 15%);
+  &:hover{
+    color:darken($my-lilac, 30%);
+    cursor:pointer;
+  }
 }

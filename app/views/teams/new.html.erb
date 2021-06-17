@@ -7,9 +7,16 @@
     </div>
     <div class="modal-input">
       <%= simple_form_for @team, url: create_team_path(@course) do |f| %>
-        <%= f.input :start_date, as: :string, input_html: { class: "datepicker", value: Date.today } %>
-        <%= f.input :time_of_the_day, as: :integer, input_html: { class: "timepicker", value: '12', enableTime: true, noCalendar: true, dateFormat: "H:i K" } %>
-        <%= f.input :duration, as: :integer, input_html: { class: "durationpicker", value: '1', enableTime: true, noCalendar: true, dateFormat: "i" } %>
+            <%= f.input :day_of_the_week,
+              as: :radio_buttons,
+              collection: Team::DAY_OF_THE_WEEK, value_method: :first, label_method: :second,
+              collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'days-wrapper',
+              item_wrapper_class: 'platform-item',
+              input_html: {class: 'quizz-css'}%>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker f-input", value: Date.today } %>
+        <%= f.input :time_of_the_day, as: :integer, input_html: { class: "timepicker f-input", value: '12', enableTime: true, noCalendar: true, dateFormat: "H:i K" } %>
+        <%= f.input :duration, as: :integer, input_html: { class: "durationpicker f-input", value: '1', enableTime: true, noCalendar: true, dateFormat: "i" } %>
         <div class="tm-btn"><%= f.submit "Submit", class: "btn btn-primary" %></div>
       <% end %>
     </div>

@@ -5,30 +5,30 @@
     transform: translate(-50%,-50%);
 }
 
-.input::placeholder {
+.navsearch::placeholder {
   color: white !important;
   }
 
-.input {
+.navsearch {
     padding: 10px;
     width: 300px !important;
     height: 40px;
     background: none;
-    border: 2px solid $my-mustard;
-    background-color: $my-mustard !important;
+    border: 2px solid $my-navy;
+    background-color: $my-navy ;
 
     border-radius: 10px;
     box-sizing: border-box;
     font-family: Rosario;
     font-size: 20px;
-    color: white !important;
+    color: white ;
     outline: none;
     // transition: .5s;
 }
 .box:hover input{
     width: 400px !important;
     // background: $my-navy;
-    border: 2px solid $my-mustard !important;
+    border: 2px solid $my-navy ;
     border-radius: 10px;
     transition: .5s;
 }
