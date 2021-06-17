@@ -25,19 +25,20 @@
     </div>
     <h2 class='top-courses'>Top Picks</h2>
   </div>
+      <h3>Recently Added</h3>
 
 
   <div class="course-list-home">
     <div class="course-list-recent">
-      <h3>Recently Added</h3>
       <ul class="post-row">
       <% @new_courses.each do |course| %>
-        <span class="post" id="<%= course.platform %>">
+        <span class="post">
           <%= link_to new_questionnaire_path(course) do %>
             <li>
               <div class="post-top">
                 <p class ="post-cat"><%= course.category %> </p>
-                <p class="post-pop">Created <%= (DateTime.now.to_i - course.created_at.to_i)/86400 %> days ago</p>
+                 <% dif = ((DateTime.now.to_time-course.created_at.to_time ) / 1.hours).round %>
+                <p class="post-pop">Created <%= dif %> hour<%='s' if dif > 1 %> ago</p>
               </div>
               <h3 class="post-text"><%= course.title %></h3>
               <p style="font-weight:600" class="post-platform"><%= course.platform.capitalize %></p>
@@ -47,11 +48,12 @@
       <% end %>
       </ul>
     </div>
-    <div class="course-list-popular">
       <h3>Most Popular</h3>
+
+    <div class="course-list-popular">
       <ul class="post-row">
       <% @popular_courses.each do |course| %>
-        <span class="post" id="<%= course.platform %>">
+        <span class="post">
           <%= link_to new_questionnaire_path(course) do %>
             <li>
               <div class="post-top">
@@ -67,4 +69,5 @@
       </ul>
     </div>
   </div>
+</div>
 </div>

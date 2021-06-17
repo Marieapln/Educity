@@ -45,6 +45,7 @@
 
 .home {
   padding: 75px;
+  padding-top:150px;
 }
 
 .home > p {
@@ -133,7 +134,6 @@
   flex-direction: column;
   align-content: space-around;
   justify-content: space-around;
-  margin: 20px;
 }
 
 .course-list-recent {
@@ -171,8 +171,19 @@ ul {
 
 .post-row {
   display: flex;
+  padding-left:0 !important;
+}
+
+.post-row > .post {
+ width:600px;
+ margin-right:20px;
+}
+.post-row  div.post-top {
+ width: 568px;
+
 }
 
 .post {
   margin: 10px;
 }
+
