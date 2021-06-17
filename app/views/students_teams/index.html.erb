@@ -1,4 +1,22 @@
 <div class="dashboard-container">
+  <div class="calendar-container">
+  <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
+    <%= date %>
+
+    <% meetings.each do |meeting| %>
+    <% t = meeting.team %>
+     <%= link_to dashboard_path(t) , :action => 'go' do %>
+      <div class="meeting" id="<%= t.course.platform%>">
+        <p class="course-title"><%= meeting.name %></p>
+        <% both_meridians = meeting.start_time.hour < 12 && meeting.end_time > 12 %>
+        <% meeting_time = "#{meeting.start_time.strftime('%l:%M').strip}#{'am' if both_meridians}-#{meeting.end_time.strftime('%l:%M%P').strip}" %>
+        <p class="course-time"><%= meeting_time %></p>
+      </div>
+      <% end %>
+
+    <% end %>
+  <% end %>
+</div>
 <div class="courses-list">
   <h3>My Courses</h3>
   <% @teams.each do |t| %>
@@ -21,22 +39,5 @@
 
     </div>
   <% end %>
-</div>
-
-<div class="calendar-container">
-  <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
-    <%= date %>
-
-    <% meetings.each do |meeting| %>
-      <div class="meeting">
-        <p><%= meeting.name %></p>
-        <% both_meridians = meeting.start_time.hour < 12 && meeting.end_time > 12 %>
-        <% meeting_time = "#{meeting.start_time.strftime('%l:%M').strip}#{'am' if both_meridians}-#{meeting.end_time.strftime('%l:%M%P').strip}" %>
-        <small><%= meeting_time %></small>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-
 </div>
 

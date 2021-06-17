@@ -1,7 +1,16 @@
+.calendar-heading {
+  font-weight:600;
+}
+.travel {
+  margin:0 40px;
+  color: $my-navy;
+  font-size: 20px;
+  font-weight:600;
+}
 .simple-calendar {
-  margin-left: 150px;
+  margin-left: 40px;
   table {
-    min-height: 80vh;
+    max-height: 60vh !important;
     border-color: white !important;
     background-color:white !important;
   }
@@ -22,18 +31,37 @@
 }
 
 .meeting {
-  color: white;
+  p{
+    font-size:12px;
+  }
+  color: $my-navy;
   padding: 8px 24px;
-  border-radius: 4px;
-  background: $my-navy;
+  border-radius: 5px;
+  background: $my-lilac;
   transition: background 0.3s ease;
+
 }
+
+#Codecademy.meeting {
+  background: $my-lilac !important;
+}
+#Udemy.meeting {
+  background: lighten($udemy, 50%) !important;
+}
+#Coursera.meeting {
+  background: $my-blue !important;
+}
+
 
 .meeting:hover {
-  background: #1BCB7F;
+  background: darken($my-mustard, 15%);
   color: white;
+
 }
 
+a:hover {
+  text-decoration: none !important;
+}
 .simple-calendar .prev-month {
     background: $my-blue !important;
 }
