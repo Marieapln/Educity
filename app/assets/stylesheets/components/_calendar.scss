@@ -27,11 +27,17 @@
   border-radius: 4px;
   background: $my-navy;
   transition: background 0.3s ease;
+  .course-time{
+    opacity: 0;
+  }
 }
 
 .meeting:hover {
-  background: #1BCB7F;
+  background: darken($my-mustard, 15%);
   color: white;
+  .course-time{
+    opacity: 1;
+  }
 }
 
 .simple-calendar .prev-month {

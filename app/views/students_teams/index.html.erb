@@ -5,8 +5,8 @@
 
     <% meetings.each do |meeting| %>
       <div class="meeting">
-        <p><%= meeting.name %></p>
-        <small><%= meeting.time  %></small>
+        <p class="course-title"><%= meeting.name %></p>
+        <p class="course-time"><%= meeting.time  %> </p>
       </div>
     <% end %>
   <% end %>
