@@ -1,7 +1,7 @@
 
 .home-body{
   background: linear-gradient(180deg,  #FFEDE3, #FFF5F0, $my-lilac, #FFF5F0,  #FFEDE3,);
-background-size: 1600% 1600%;
+  background-size: 1600% 1600%;
   animation: sunrise 20s ease infinite;}
 
 .home-welcome{
@@ -78,6 +78,7 @@ background-size: 1600% 1600%;
 .row-home {
   display: flex;
   align-items: center;
+  padding: 48px 0px;
 }
 
 .column-home {
@@ -86,15 +87,39 @@ background-size: 1600% 1600%;
 
 .row-popular {
   display: flex;
+  align-items: center;
+  padding: 96px 0px;
 }
 
 .column-popular {
   flex: 50%;
-  padding: 24px;
+  padding: 5px;
 
 }
 
 .move-right {
   padding-left: 62px;
 }
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 56px;
+}
 
+.card-category {
+  background-size: cover;
+  position: relative;
+  background-color: white;
+  height: 180px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  // z-index: 1;
+}

@@ -1,13 +1,14 @@
 <body class="home-body">
 <div class = "home">
-    <div class="d-flex align-items-center justify-content-between">
-     <div>
-        <h1 class="home-welcome">Welcome to Educity,</h1>
-        <h1 class="home-welcome">the Learners' Community</h1>
-        <p>What would you like to <strong>study <em>socially</em></strong>?</p>
+  <div class="d-flex align-items-center justify-content-between">
+    <div>
+       <h1 class="home-welcome">Welcome to Educity,</h1>
+       <h1 class="home-welcome">the Learners' Community</h1>
+       <p>What would you like to <strong>study <em>socially</em></strong>?</p>
     </div>
     <%= image_tag 'home_image-1', width: 500 %>
 </div>
+
 <div class="row-home">
   <div class="column-home text-center">
      <%= image_tag 'home_image-2', width: 300, height: 300 %>
@@ -22,6 +23,31 @@
      <p><strong>Follow Other Courses</strong></p>
   </div>
 </div>
+<%# <%= Course.all.each {|course| course.users.count} %> 
+ <%# <% end %> 
+<h1 class="home-welcome">Popular Courses</h1>
+
+<div class="row-popular cards">
+  <div class="column-popular ">
+    <div class="card-category">
+      <%= @list.first %><br/>
+      <%= @list.second %><br/>
+      <%= @list.third %>
+      <%# <%= image_tag 'popular_courses-1', width: 500, height: 500, style: "z-index: 0;" %>
+   </div>    
+  </div>
+  <div class="column-popular ">
+    <div class="card-category">
+      <%= @list.fourth %><br/>
+      <%= @list.fifth %><br/>
+      <%= @list.last %>
+      <%# <%= image_tag 'popular_courses-2', width: 500, height: 500, style: "z-index: 0;" %> 
+      
+    </div>    
+  </div>
+</div>
+
+
 
 
 </body>
