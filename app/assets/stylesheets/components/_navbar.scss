@@ -3,11 +3,20 @@
   // background-color: $light-gray;
   height: 60px;
   padding: 8px 16px;
+
+  background-color: transparent;
+  // background-color: white;
+  transition: 0.5s background-color ease;
+
   position: fixed;
   width: 100%;
   z-index: 100;
   display:flex;
   align-items:center;
+}
+
+.navbar-lewagon-white {
+  background-color:  white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -24,7 +33,6 @@
   font-weight: bold;
 }
 
-.navbar-lewagon #logo{
-    font-size: 30px;
-
+.navbar-lewagon #logo {
+  font-size: 30px;
 }
