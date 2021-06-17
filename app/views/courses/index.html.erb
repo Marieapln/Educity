@@ -33,12 +33,13 @@
     <% end %>
     <button class='reset-filters reset-hidden'>Reset subcategory filters</button>
   </div>
+  <div class="course-list">
   <ul>
         <% @user = current_user %>
 
     <% @courses.each do |course| %>
 
-    <% if !@user.courses.include?(course) %>
+    <%# if !@user.courses.include?(course) %>
 
       <% subcatlist = [] %>
       <% course.subcategories.each do |subcat| %>
@@ -61,12 +62,12 @@
 
       </span>
 
-      <% else %>
-            <% subcatlist = [] %>
-      <% course.subcategories.each do |subcat| %>
-        <% subcatlist << "post-subcat-#{subcat.downcase.gsub(/\W/, '')}" %>
-      <% end %>
-      <% subcats = subcatlist.join(' ') %>
+      <%# else %>
+<!--             <%# subcatlist = [] %>
+      <%# course.subcategories.each do |subcat| %>
+        <% #subcatlist << "post-subcat-#{subcat.downcase.gsub(/\W/, '')}" %>
+      <% #end %>
+      <%# subcats = subcatlist.join(' ') %>
       <span class="post post-category-<%= course.category.downcase.gsub(/\W/, '') %> <%= subcats %>" id="<%= course.platform %>" style="color: #0E3959" >
           <li class="sweet-alert">
             <div class="post-top">
@@ -76,19 +77,21 @@
             <h3 class="post-text"><%= course.title %> </h3>
              <p style="font-weight:600" class="post-platform"><%= course.platform.capitalize %></p>
           </li>
-      <% end %>
-      </span>
+      <%# end %>
+      </span> -->
+
           <% end %>
 
     <li>
-      <div class="new-course-q">
-        <h3> Couldn't find the course you are looking for ? </h3>
+<div class="new-course-q">
+        <h3> Couldn't find the course you were looking for ? </h3>
         <p>Add it to the list, we promise it's easy.</p>
         <div class="button">
           <button class="btn btn-primary" data-toggle="modal" data-target="#createcourseModal">+</button>
         </div>
     </li>
   </ul>
+</div>
 </div>
 
 <!-- Modal -->
