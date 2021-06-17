@@ -1,5 +1,5 @@
 .category-wrapper {
-  width: 250px;
+  width: 275px;
   padding:10px ;
   display: flex;
   align-items: center;
@@ -23,7 +23,6 @@
   display: block;
   cursor: pointer;
   box-sizing: border-box;
-  width: 100%;
   // font-size: 12px;
   text-align: center;
   // padding: 0;
@@ -31,13 +30,13 @@
   border: 1px solid #EAEAEA;
   border-radius: 4px;
   background-color: white;
-  height: 50px;
+  padding: 15px;
   margin-bottom: 10px;
 }
 
 .category-selector:checked + label {
   color: $my-navy !important;
-  background: $my-lilac;
+  background: $my-blue !important;
 }
 
 
