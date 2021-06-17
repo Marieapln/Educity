@@ -1,4 +1,16 @@
 <div class="dashboard-container">
+  <div class="calendar-container">
+  <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
+    <%= date %>
+
+    <% meetings.each do |meeting| %>
+      <div class="meeting">
+        <p><%= meeting.name %></p>
+        <small><%= meeting.time  %></small>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 <div class="courses-list">
   <h3>My Courses</h3>
   <% @teams.each do |t| %>
@@ -23,18 +35,7 @@
   <% end %>
 </div>
 
-<div class="calendar-container">
-  <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
-    <%= date %>
 
-    <% meetings.each do |meeting| %>
-      <div class="meeting">
-        <p><%= meeting.name %></p>
-        <small><%= meeting.time  %></small>
-      </div>
-    <% end %>
-  <% end %>
-</div>
 
 </div>
 
