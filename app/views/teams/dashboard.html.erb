@@ -21,7 +21,6 @@
     <%  StudentsTeam.where(team_id: @team.id).each do |st| %>
 
           <span><%= cl_image_tag st.user.photo.key %></span>
-
     <% end %>
 
   </div>
