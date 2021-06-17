@@ -1,4 +1,4 @@
-.home-body {
+.homepage#page-container{
   background: linear-gradient(180deg,  #FFEDE3, #FFF5F0, $my-lilac, #FFF5F0,  #FFEDE3,);
   background-size: 1600% 1600%;
   animation: sunrise 20s ease infinite;
@@ -45,7 +45,7 @@
 
 .home {
   padding: 75px;
-  padding-top:150px;
+  padding-top:250px;
 }
 
 .home > p {

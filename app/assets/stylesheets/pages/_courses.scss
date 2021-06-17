@@ -3,7 +3,7 @@
   height: 600px;
   background-color:white;
   width: 550px;
-  margin-right: 30px;
+  margin-right: 100px;
   box-shadow:var(--box-shadow);
 }
 .new-course-q {
@@ -21,10 +21,11 @@
 }
 
 .courses-container {
-  padding: 40px;
+  padding: 40px 10px;
   margin-top:50px;
+  margin-right:60px;
   display: flex;
-  align-items: top;
+  align-items: space-between;
   justify-content: center;
   overflow: hidden;
   flex-direction: row;
@@ -83,6 +84,10 @@
     display: flex;
     justify-content: space-between;
     margin-bottom:10px;
+  }
+
+  ul {
+    padding-left: 0 !important;
   }
   ul.aa {
     list-style-type: none;
