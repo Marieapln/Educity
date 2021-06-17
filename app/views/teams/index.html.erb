@@ -1,10 +1,16 @@
 <div class="teams">
   <% @teams.each do |team| %>
-
+  <%  meet_time = 'mornings' if (7..11).include?(team.time_of_the_day) %>
+  <%  meet_time = 'lunchtimes' if (12..14).include?(team.time_of_the_day) %>
+  <%  meet_time = 'afternoons' if (15..17).include?(team.time_of_the_day) %>
+  <%  meet_time = 'evenings' if (18..22).include?(team.time_of_the_day) %>
+  <%  meet_time = 'nights' if (0..6).include?(team.time_of_the_day) %>
     <div class="card-teams" >
-      <p class="teams-meeting"><%= team.day_of_the_week%>s @ <%= team.time_of_the_day%>:00</p>
-      <p><%= team.duration%>H meetings</p>
-      <p><%= team.start_date%></p>
+      <p class="teams-meeting"><strong><%= team.duration %> hour</strong> meetings</p>
+      <p class="teams-meeting"><strong><%= team.start_date.strftime('%A') %> <%= meet_time %></strong></p>
+      <% both_meridians = team.start_date.hour < 12 && (team.start_date + (team.duration * 3600)).hour > 12 %>
+      <% meeting_time = "#{team.start_date.strftime('%l:%M').strip}#{'am' if both_meridians}-#{(team.start_date + (team.duration * 3600)).strftime('%l:%M%P').strip}" %>
+      <p class="teams-meeting"><strong><%= meeting_time %></strong></p>
 
       <div id="team-participants">
         <% team.users.each do |user| %>
