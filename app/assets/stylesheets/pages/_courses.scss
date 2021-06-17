@@ -1,3 +1,23 @@
+#searchbody{
+  background: linear-gradient(180deg,  $my-navy, #614385);
+  background-size: 1600% 1600%;
+  animation: sunset 20s ease infinite;
+}
+
+  @keyframes sunset {
+  0% {
+    background-position:  50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position:  50% 0%;
+  }
+}
+// #searchbody{
+//   background-color: $my-navy;
+// }
 .filter-form{
   border-radius: 15px;
   border: 2px solid #eee;
