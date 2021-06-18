@@ -51,8 +51,8 @@ div#banner-text{
 }
 
 .home {
-  // padding: 75px;
   padding-top:250px;
+  //padding: 40px 75px;
 }
 
 .home > p {
@@ -89,6 +89,13 @@ div#banner-text{
 
 .column-home {
   width: 400px;
+  position: relative;
+  p {
+    position: absolute;
+    bottom: 12px;
+    left: 50px;
+    width: 70%;
+  }
 }
 
 .row-popular {
@@ -135,7 +142,7 @@ div#banner-text{
   justify-content: space-around;
   margin: 20px;
   margin-bottom: 160px;
-
+  // margin: 5px;
 }
 
 .course-list-home {
@@ -174,6 +181,7 @@ div#banner-text{
   margin: 10px;
   width:100vw;
   margin-left:0 !important;
+  // margin: 5px;
 }
 
 ul {
