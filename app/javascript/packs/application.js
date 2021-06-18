@@ -39,6 +39,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initUpdateNavbarOnScroll();
   categorySelection();
-  initFlatpickr();
   initUpdateNavbarOnScroll();
 });
+
+  initFlatpickr();
