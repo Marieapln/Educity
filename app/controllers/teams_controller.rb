@@ -36,11 +36,12 @@ class TeamsController < ApplicationController
     @course = Course.find(params[:course_id])
     @team.course = @course
     @team.time_of_the_day = params[:team]["time_of_the_day(4i)"].to_i
-    StudentsTeam.new(team_id: @team.id, user_id: @user.id).save
 
-    if @team.save
-      redirect_to students_teams_path
+      if @team.save
+        StudentsTeam.create!(team_id: @team.id, user_id: @user.id)
+        redirect_to students_teams_path
     end
+
   end
 
 
