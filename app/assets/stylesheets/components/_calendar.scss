@@ -64,24 +64,40 @@
 
 }
 
+.meet-deets{
+  box-shadow: 2px 5px 2px  rgba(100,100,100, 0.1);
+}
+
 #Codecademy.meet-deets {
-  background: $my-lilac !important;
   border:none;
+  background-color:white;
+  color: $codecademy;
+  &:hover{
+  background: $my-lilac !important;
+}
 }
 
 #Udemy.meet-deets {
+  border:none;
+  background-color:white;
+  color: $udemy;
+  &:hover{
   background: #ffeff9 !important;
-    border:none;
+}
 }
 #Coursera.meet-deets {
+   border:none;
+  background-color:white;
+  color: $coursera;
+  &:hover{
   background: $my-blue !important;
-    border:none;
+  }
 }
-
 
 
 #Codecademy.meeting {
   background: $codecademy !important;
+
   }
 
 #Udemy.meeting {
@@ -126,7 +142,7 @@ vertical-align: middle;
   width:535px;
   padding: 16px;
   margin-left:50px;
-  margin-bottom:10px;
+  margin-bottom:15px;
   display: flex;
   justify-content:space-between;
 
