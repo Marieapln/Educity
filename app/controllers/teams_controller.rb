@@ -15,7 +15,10 @@ class TeamsController < ApplicationController
 
   def dashboard
     @team = Team.find(params[:team_id])
-    Notification.where(team_id: @team.id, user_id: current_user.id).last.destroy
+    notification = Notification.where(team_id: @team.id, user_id: current_user.id).last
+    unless notification.nil?
+      notification.destroy
+    end
 
     @course = @team.course
     @messages = Chat.where(team_id: params[:team_id])
