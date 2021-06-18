@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :courses, through: :teams
   has_many :questionnaires
   has_many :chats
+  has_many :notifications
 end

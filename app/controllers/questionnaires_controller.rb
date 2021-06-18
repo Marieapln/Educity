@@ -1,5 +1,4 @@
 class QuestionnairesController < ApplicationController
-
   def new
     @questionnaire = Questionnaire.new
     @questionnaire.course = Course.find(params[:course_id])
@@ -22,4 +21,6 @@ class QuestionnairesController < ApplicationController
     def list_params
     params.require(:questionnaire).permit(:duration, when: [], days: [])
   end
+
+
 end

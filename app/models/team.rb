@@ -8,4 +8,5 @@ class Team < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_city?
   has_many :chats
   has_many :meetings
+  has_many :notifications
 end

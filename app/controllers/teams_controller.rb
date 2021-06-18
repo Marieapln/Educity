@@ -1,7 +1,6 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: %i[show]
   before_action :set_questionnaire, only: %i[index]
-
   def index
     @course = Course.find(params[:course_id])
     begin
@@ -16,6 +15,8 @@ class TeamsController < ApplicationController
 
   def dashboard
     @team = Team.find(params[:team_id])
+    Notification.where(team_id: @team.id, user_id: current_user.id).last.destroy
+
     @course = @team.course
     @messages = Chat.where(team_id: params[:team_id])
     @chat = Chat.new
@@ -37,6 +38,8 @@ class TeamsController < ApplicationController
       redirect_to students_teams_path
     end
   end
+
+
 
   private
 

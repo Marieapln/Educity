@@ -20,4 +20,6 @@ class PagesController < ApplicationController
     @meetings = Meeting.where(starts_at: start_date.beginning_of_week..start_date.end_of_week)
   end
 
+
+
 end
