@@ -16,6 +16,7 @@ class CoursesController < ApplicationController
   end
 
   def create
+
     @url = params[:url]
     html_file = URI.open(@url).read
     html_doc = Nokogiri::HTML(html_file)
@@ -75,6 +76,7 @@ class CoursesController < ApplicationController
   end
 
   private
+
 
   def set_platforms
     @platforms = []
