@@ -35,7 +35,7 @@
 
 
 :root{
---box-shadow: 5px 10px 5px  rgba(100,100,100, 0.1);
+--box-shadow: 5px 5px 5px  rgba(100,100,100, 0.1);
 }
 
 .standardbod{
@@ -96,3 +96,16 @@ p {
 }
 
 
+h3#Codecademy-h3{
+  color: $codecademy
+}
+
+
+h3#Udemy-h3{
+  color: $udemy;
+}
+
+
+h3#Coursera-h3{
+  color: $coursera;
+}
