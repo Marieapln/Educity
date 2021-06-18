@@ -50,7 +50,7 @@
                   <%= link_to dashboard_path(team) , :action => 'go' do %>
 
     <div class="top-course">
-      <p class="teams-meeting"><strong><%= team.start_date.strftime('%A') %>s</strong> @ <strong><%= team.start_date.strftime('%l:%M%P') %></strong>, <strong><%= team.duration %> hour<%= 's' if team.duration != 1 %></strong></p>
+      <p class="teams-meeting"><strong><%= team.start_date.strftime('%A') %>s</strong> @ <strong><%= team.time_of_the_day %>:00</strong>, <strong><%= team.duration %> hour<%= 's' if team.duration != 1 %></strong></p>
       <p class ="post-cat"><%= team.course.category %> </p>
     </div>
     <h3 class="post-text"><%= team.course.title %></h3>

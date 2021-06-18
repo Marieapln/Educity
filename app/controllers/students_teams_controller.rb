@@ -8,6 +8,7 @@ class StudentsTeamsController < ApplicationController
   def index
     @user = current_user
     Meeting.all.each {|instance| instance.destroy}
+
     @user.teams.each do |team|
 
       for week in 0..3
