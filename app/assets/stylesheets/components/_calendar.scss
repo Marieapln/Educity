@@ -7,15 +7,23 @@
 }
 .calendar-heading {
   font-weight:600;
-  margin-bottom:20px;
+  margin-bottom:26px;
   display:flex;
   justify-content: space-between;
 }
 .travel {
   margin:0 40px;
-  color: $my-navy;
+  color:$my-navy;
+  background-color: $light-gray;
   font-size: 20px;
   font-weight:600;
+  padding: 3px 12px;
+  border: 2px solid $my-navy;
+  &:hover{
+    background-color: $light-gray;
+    border: 3px solid $my-navy;
+
+  }
 }
 .simple-calendar {
   margin-left: 40px;

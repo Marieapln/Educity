@@ -22,7 +22,7 @@
   <% @teams.each do |t| %>
   <% team = t.team %>
 
-  <div class="course-card">
+  <div class="course-card" id="<%=team.course.platform%>">
                   <%= link_to dashboard_path(team) , :action => 'go' do %>
 
     <div class="top-course">
@@ -40,5 +40,6 @@
 
     </div>
   <% end %>
+</div>
 </div>
 

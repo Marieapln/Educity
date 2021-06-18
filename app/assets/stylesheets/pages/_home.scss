@@ -1,4 +1,4 @@
-.home-body {
+.homepage#page-container{
   background: linear-gradient(180deg,  #FFEDE3, #FFF5F0, $my-lilac, #FFF5F0,  #FFEDE3,);
   background-size: 1600% 1600%;
   animation: sunrise 20s ease infinite;
@@ -140,7 +140,6 @@
   flex-direction: column;
   align-content: space-around;
   justify-content: space-around;
-  margin: 20px;
 }
 
 .course-list-recent {
@@ -178,8 +177,19 @@ ul {
 
 .post-row {
   display: flex;
+  padding-left:0 !important;
+}
+
+.post-row > .post {
+ width:600px;
+ margin-right:20px;
+}
+.post-row  div.post-top {
+ width: 568px;
+
 }
 
 .post {
   margin: 10px;
 }
+
