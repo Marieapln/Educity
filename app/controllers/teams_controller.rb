@@ -35,7 +35,8 @@ class TeamsController < ApplicationController
     @team = Team.create(list_params)
     @course = Course.find(params[:course_id])
     @team.course = @course
-    @team.time_of_the_day = params[:team]["time_of_the_day(4i)"].to_i
+    @team.duration = params[:team]["duration"].to_i
+    @team.time_of_the_day = params[:team]["time_of_the_day"].to_i
 
       if @team.save
         StudentsTeam.create!(team_id: @team.id, user_id: @user.id)
