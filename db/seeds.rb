@@ -31,10 +31,7 @@ file = URI.open("https://avatars.githubusercontent.com/u/80281479?v=4")
 user.photo.attach(io:file, filename: "felix.png")
   puts "Created user account for #{user.first_name} #{user.last_name}"
 
-user = User.create!(email: "marie@lewagon.fr", password: "password", first_name: "Marie", last_name: "Apolozan")
-file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618906081/uwglzhbnj7yyqjbhgtst.jpg")
-user.photo.attach(io:file, filename: "marie.png")
-  puts "Created user account for #{user.first_name} #{user.last_name}"
+
 
 user = User.create!(email: "chloe@lewagon.co.uk", password: "password", first_name: "Chloe", last_name: "Avenas")
 file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618501225/aeew3amojdtvyvmflbfo.jpg")
@@ -200,3 +197,8 @@ Team.all.each do |team|
   end
   puts "Added #{users_to_add_count}"
 end
+
+user = User.create!(email: "marie@lewagon.fr", password: "password", first_name: "Marie", last_name: "Apolozan")
+file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618906081/uwglzhbnj7yyqjbhgtst.jpg")
+user.photo.attach(io:file, filename: "marie.png")
+  puts "Created user account for #{user.first_name} #{user.last_name}"
