@@ -14,13 +14,13 @@
 .travel {
   margin:0 40px;
   color:$my-navy;
-  background-color: $light-gray;
+  background-color: $my-beige;
   font-size: 20px;
   font-weight:600;
   padding: 3px 12px;
   border: 2px solid $my-navy;
   &:hover{
-    background-color: $light-gray;
+    background-color: $my-beige;
     border: 3px solid $my-navy;
 
   }
@@ -34,7 +34,8 @@
   }
 
   td {
-    width:100px !important;
+    width:50px !important;
+    height:60px !important;
     border-color: white !important;
     text-align:center;
   }
@@ -44,46 +45,69 @@
   }
 
   .today {
-    background-color: $my-mustard !important;
+    background-color: $my-green !important;
   }
 }
 
 .meeting {
+  margin:5px;
   p{
     font-size:12px;
   }
   color: $my-navy;
-  padding: 8px 24px;
-  border-radius: 5px;
+  padding: 8px 6px ;
+  border-radius: 50%;
   background: $my-lilac;
   transition: background 0.3s ease;
+  width:5px;
+  height:5px;
 
 }
+
+.meet-deets{
+  box-shadow: 2px 5px 2px  rgba(100,100,100, 0.1);
+}
+
+#Codecademy.meet-deets {
+  border:none;
+  background-color:white;
+  color: $codecademy;
+  &:hover{
+  background: $my-lilac !important;
+}
+}
+
+#Udemy.meet-deets {
+  border:none;
+  background-color:white;
+  color: $udemy;
+  &:hover{
+  background: #ffeff9 !important;
+}
+}
+#Coursera.meet-deets {
+   border:none;
+  background-color:white;
+  color: $coursera;
+  &:hover{
+  background: $my-blue !important;
+  }
+}
+
 
 #Codecademy.meeting {
-  background: $my-lilac !important;
-    &:hover p.course-title {
-      font-weight:600 !important;
+  background: $codecademy !important;
 
   }
 
-}
 #Udemy.meeting {
-  background: lighten($udemy, 40%) !important;
-  &:hover p.course-title {
-      font-weight:600 !important;
-
-  }
+  background: $udemy !important;
 }
+
 #Coursera.meeting {
-  background: $my-blue !important;
-    &:hover p.course-title {
-      font-weight:600 !important;
+  background: $coursera !important;
 
-  }
 }
-
-
 
 
 a:hover {
@@ -102,3 +126,46 @@ a:hover {
     background: $my-blue !important;
 }
 
+div#meetings {
+  display:flex;
+  flex-direction: row;
+  justify-content:center;
+}
+
+.meet-deets {
+  text-align: center;
+vertical-align: middle;
+
+  border-radius:10px;
+  color:$my-navy;
+  background-color:$my-blue;
+  width:535px;
+  padding: 16px;
+  margin-left:50px;
+  margin-bottom:15px;
+  display: flex;
+  justify-content:space-between;
+
+}
+.meet-deets:hover{
+    background-color: darken($my-blue, 5%) !important;
+    transform: scale(1.025);
+    transition-duration:0.3s;
+  }
+.day-meet {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  font-size:18px;
+  #daynum{
+  font-weight: 600;
+
+}
+}
+.title-meet{
+  padding:0 20px;
+}
+.meet-list {
+  height:350px;
+  overflow:scroll;
+}

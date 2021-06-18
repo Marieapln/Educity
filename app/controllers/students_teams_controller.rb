@@ -22,6 +22,7 @@ class StudentsTeamsController < ApplicationController
     @teams = StudentsTeam.where(user_id: @user.id)
 
     @meetings = Meeting.where(user_id: @user.id)
+    @meeting_list = @meetings.select{|m| m.start_time > DateTime.now}
   end
 
 

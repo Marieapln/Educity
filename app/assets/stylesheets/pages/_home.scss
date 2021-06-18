@@ -20,7 +20,14 @@
     background-position:  50% 0%;
   }
 }
+div#banner-text{
+  max-width:566px;
+    word-wrap: break-word;
+    p{
+      font-weight:400;
+    }
 
+}
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
   color: rgba(1,1,1,0.2) !important;
 }
@@ -44,7 +51,8 @@
 }
 
 .home {
-  padding: 40px 75px;
+  padding-top:250px;
+  //padding: 40px 75px;
 }
 
 .home > p {
@@ -132,7 +140,9 @@
   flex-direction: row;
   align-content: space-around;
   justify-content: space-around;
-  margin: 5px;
+  margin: 20px;
+  margin-bottom: 160px;
+  // margin: 5px;
 }
 
 .course-list-home {
@@ -168,7 +178,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5px;
+  margin: 10px;
+  width:100vw;
+  margin-left:0 !important;
+  // margin: 5px;
 }
 
 ul {
@@ -193,3 +206,6 @@ ul {
   margin: 10px;
 }
 
+.bottom-home{
+  padding: 20px 90px 100px;
+}
