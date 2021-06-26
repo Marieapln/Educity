@@ -34,8 +34,7 @@ text-align: center;
   }
 
 div.chat-message{
-    border-bottom-left-radius: 25px !important;
-    border-bottom-right-radius: 25px;
+  margin-bottom:15px;
 }
 
 ul {    list-style-type: none;
@@ -49,7 +48,7 @@ ul {    list-style-type: none;
 }
 .chat {
 
-  height:615px;
+  // height:615px;
   margin-top:30px;
   margin-left: 150px;
   width: 500px;
@@ -170,24 +169,26 @@ ul {    list-style-type: none;
 width:480px;
 height: 12vh;
 border: 2px solid $light-gray;
+
 }
 
-
 .chat-botton{
+  margin-top: -70px;
+
+  margin-left: 405px;
   z-index: 100;
-  position: absolute;
-  bottom:305px;
-  right: 110px;
-  font-size:15px;
-  padding: 7px !important;
-  background: $my-blue;
+  height: 35px;
+  width:70px;
+  // padding: 7px !important;
+  background: $my-blue !important;
   border-radius:5px !important;
   text-transform: uppercase;
   color: darken($my-blue,50%);
 
   &:hover {
-    background:  darken($my-blue,20%);
-    color:white;
+    background:  darken($my-blue,20%) !important;
   }
-
 }
+
+
+
