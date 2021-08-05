@@ -1,7 +1,7 @@
 DatabaseCleaner.clean_with(:truncation)
 
 days = %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
-m = Date.new(2021,6,14)
+m = Date.today
 start = [m, m+1, m+2, m+3, m+4, m+5, m+6]
 
 cities = %w(London)
