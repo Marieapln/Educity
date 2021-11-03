@@ -57,7 +57,11 @@
      <p style="font-weight:600" class="post-platform"><%= team.course.platform.capitalize %></p>
             <div id="team-participants">
         <% team.users.each do |user| %>
+          <% if user.photo.attached? %>
           <span><%= cl_image_tag user.photo.key %></span>
+          <% else %>
+          <span> <%= image_tag "https://cdn.dribbble.com/users/230875/screenshots/12138332/media/e7333ea2756909de0b68a1ac111b9011.jpg?compress=1&resize=1200x1200"%></span>
+        <% end %>
         <% end %>
       </div>
           <% end %>
@@ -67,4 +71,7 @@
 </div>
 </div>
 </body>
+
+
+
 
